@@ -6,3 +6,5 @@ Section 01: JavaScript - Bonus
 
 
 01. Course introduction 
+
+02. Javascript story - from console to v8 engine
