@@ -2,9 +2,15 @@ Node.js - Beginner to Advance course with projects
 
 
 
-Section 01: JavaScript - Bonus
+Section 01: Javascript - Bonus
 
 
 01. Course introduction 
 
 02. Javascript story - from console to v8 engine
+
+03. How Javascript executes the code - Behind the scene
+-open link: https://nodejs.org/en
+-type command: node -v
+-course hello.js file
+-open terminal and type command: node hello.js
