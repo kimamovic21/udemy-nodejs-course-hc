@@ -16,7 +16,14 @@ Section 01: Javascript - Bonus
 -open terminal and type command: node hello.js
 
 04. Data types, variables and constants in Javascript
--course files printing.js, datatype.js and changes.js
+-create folder 01-part and files printing.js, datatype.js and changes.js
 -type command: node printing.js
 -type command: node datatype.js
 -type command: node changes.js
+
+05. Operations in Javascript
+-create files operations.js, logical.js, assignment.js and operatorPrecedence.js
+-type command: node operations.js
+-type command: node logical.js
+-type command: node assignment.js
+-type command: node operatorPrecedence.js
