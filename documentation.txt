@@ -14,3 +14,9 @@ Section 01: Javascript - Bonus
 -type command: node -v
 -course hello.js file
 -open terminal and type command: node hello.js
+
+04. Data types, variables and constants in Javascript
+-course files printing.js, datatype.js and changes.js
+-type command: node printing.js
+-type command: node datatype.js
+-type command: node changes.js
