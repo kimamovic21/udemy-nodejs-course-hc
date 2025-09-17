@@ -47,3 +47,7 @@ Section 01: Javascript - Bonus
 10. Introduction to loops in Javascript
 -create loopChallenges.js file
 -type command: node loopChallenges.js
+
+11. Defeat 6 loop challenges in Javascript
+-create more loops in loopChallenges.js file
+-type command: node loopChallenges.js
