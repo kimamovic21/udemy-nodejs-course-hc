@@ -35,3 +35,7 @@ Section 01: Javascript - Bonus
 07. Non primitives in Javascript
 -create nonPrimitives.js file
 -type command: node nonPrimitives.js
+
+08. Five challenges on conditions in Javascript
+-create folder 03-part and condition-challenges.js file
+-type command: node condition-challenges.js
