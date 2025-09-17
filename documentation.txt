@@ -27,3 +27,7 @@ Section 01: Javascript - Bonus
 -type command: node logical.js
 -type command: node assignment.js
 -type command: node operatorPrecedence.js
+
+06. Primitives in Javascript
+-create folder 02-part and primitives.js file
+-type command: node primitives.js
