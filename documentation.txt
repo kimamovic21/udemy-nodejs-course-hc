@@ -43,3 +43,7 @@ Section 01: Javascript - Bonus
 09. Facing ten challenges in Array and methods
 -create folder 04-part and arrayChallenges.js file
 -type command: node arrayChallenges.js
+
+10. Introduction to loops in Javascript
+-create loopChallenges.js file
+-type command: node loopChallenges.js
