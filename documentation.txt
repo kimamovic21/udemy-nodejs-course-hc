@@ -88,3 +88,14 @@ Section 02: Getting started with Node.js: From core concepts to modules and file
 -create notes.txt file
 -create variable const content
 -open link: https://stackoverflow.com/questions/51349900/what-does-node-module-wrapper-function-mean-in-node
+
+20. Working with third-party modules using npm and package.json
+-open link: https://www.npmjs.com
+-open link: https://www.npmjs.com/package/@types/node
+-type command: npm init
+-type command: npm i @types/node
+-check folder node_modules (do not touch)
+-check package-lock.json file
+-create .gitignore file to ignore folder node_modules
+-delete folder node_modules and type command npm i
+-type command: node --watch index.js
