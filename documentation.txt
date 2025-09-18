@@ -71,3 +71,8 @@ Section 02: Getting started with Node.js: From core concepts to modules and file
 15. What is Node.js and why use it for server-side development 
 
 16. Installing Node.js and setting up a local development environment
+
+17. Your first Node.js script: Writing and running Hello world
+-create folder hello-world and script.js file
+-type command: node --help
+-type command: node --watch script.js
