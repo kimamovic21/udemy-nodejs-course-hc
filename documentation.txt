@@ -51,3 +51,7 @@ Section 01: Javascript - Bonus
 11. Defeat 6 loop challenges in Javascript
 -create more loops in loopChallenges.js file
 -type command: node loopChallenges.js
+
+12. Ten loop challenges to learn all kind of loops in Javascript
+-in folder 04-part create levelUpChallenges.js file
+-type command: node levelUpChallenges.js
