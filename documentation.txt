@@ -80,3 +80,11 @@ Section 02: Getting started with Node.js: From core concepts to modules and file
 18. Node.js vs browser Javascript engines: key differences
 -in script.js file invoke function alert()
 -two different environments to run JS: Browser and Node.js
+
+19. Understanding Node.js modules and their role in structuring code
+-create folder 01-modules and index.js file
+-three types of modules: built in, 3rd party and custom modules
+-in index.js file create variable const fs
+-create notes.txt file
+-create variable const content
+-open link: https://stackoverflow.com/questions/51349900/what-does-node-module-wrapper-function-mean-in-node
