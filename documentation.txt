@@ -99,3 +99,13 @@ Section 02: Getting started with Node.js: From core concepts to modules and file
 -create .gitignore file to ignore folder node_modules
 -delete folder node_modules and type command npm i
 -type command: node --watch index.js
+
+21. Using the file system (FS) module to read and write files
+-open link: https://nodejs.org/api/fs.html
+-in index.js file update function require()
+-invoke function fs.writeFileSync()
+-invoke function fs.appendFileSync()
+-check copy.txt file
+-invoke function fs.mkdirSync()
+-invoke function fs.rmdirSync()
+-invoke function fs.unlinkSync()
