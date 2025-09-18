@@ -62,3 +62,10 @@ Section 01: Javascript - Bonus
 
 14. Higher order functions and nested functions in Javascript
 -create more functions in functions.js file
+
+
+
+Section 02: Getting started with Node.js: From core concepts to modules and file system
+
+
+15. What is Node.js and why use it for server-side development 
