@@ -109,3 +109,8 @@ Section 02: Getting started with Node.js: From core concepts to modules and file
 -invoke function fs.mkdirSync()
 -invoke function fs.rmdirSync()
 -invoke function fs.unlinkSync()
+
+22. Understanding blocking vs non-blocking code execution in Node.js
+-create script.js file
+-in script.js file import fs module
+-type command: node --watch script.js
