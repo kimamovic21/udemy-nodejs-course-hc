@@ -114,3 +114,6 @@ Section 02: Getting started with Node.js: From core concepts to modules and file
 -create script.js file
 -in script.js file import fs module
 -type command: node --watch script.js
+
+23. The internal architecture of Node.js: Event loop and thread pool
+-create folder images and add an image of internal architecture
