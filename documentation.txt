@@ -59,3 +59,6 @@ Section 01: Javascript - Bonus
 13. Function, arrow function, THIS and context in Javascript
 -create folder 05-part and functions.js file
 -type command: node functions.js
+
+14. Higher order functions and nested functions in Javascript
+-create more functions in functions.js file

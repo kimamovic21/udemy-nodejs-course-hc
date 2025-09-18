@@ -38,3 +38,27 @@ function testOne() {
 
 const testTwo = () => console.log(this);
 // testTwo();
+
+
+function makeTea(typeOfTea) {
+  return `Making tea: ${typeOfTea}...`;
+};
+
+function processTeaOrder(teaFunction) {
+  return teaFunction('earl grey');
+};
+
+let order = processTeaOrder(makeTea);
+// console.log(order);
+
+
+function createTeaMaker(name) {
+  return function (teaType) {
+    return `Making ${teaType}... - ${name}`;
+  };
+};
+
+let teaMaker = createTeaMaker('Kerim');
+let result = teaMaker('green tea');
+// console.log(teaMaker);
+// console.log(result);
