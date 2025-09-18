@@ -55,3 +55,7 @@ Section 01: Javascript - Bonus
 12. Ten loop challenges to learn all kind of loops in Javascript
 -in folder 04-part create levelUpChallenges.js file
 -type command: node levelUpChallenges.js
+
+13. Function, arrow function, THIS and context in Javascript
+-create folder 05-part and functions.js file
+-type command: node functions.js
