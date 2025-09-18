@@ -76,3 +76,7 @@ Section 02: Getting started with Node.js: From core concepts to modules and file
 -create folder hello-world and script.js file
 -type command: node --help
 -type command: node --watch script.js
+
+18. Node.js vs browser Javascript engines: key differences
+-in script.js file invoke function alert()
+-two different environments to run JS: Browser and Node.js
