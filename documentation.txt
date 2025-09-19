@@ -148,3 +148,9 @@ Section 03: Understanding events and buffers in Node.js: Building reactive apps
 27. Introduction to Buffers in Node.js: What and why
 -open link: https://nodejs.org/api/buffer.html
 -open link: https://calc.penjee.com
+
+28. Working with buffers in Node.js using practical code examples
+-create folder 03-buffers and bufferBasic.js file
+-in bufferBasic.js file import object Buffer
+-create more buf variables
+-type command: node --watch bufferBasic.js
