@@ -144,3 +144,7 @@ Section 03: Understanding events and buffers in Node.js: Building reactive apps
 -invoke three events chat.on()
 -invoke methods chat.join(), chat.sendMessage() and chat.leave()
 -type command: node --watch index.js
+
+27. Introduction to Buffers in Node.js: What and why
+-open link: https://nodejs.org/api/buffer.html
+-open link: https://calc.penjee.com
