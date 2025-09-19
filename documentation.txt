@@ -125,3 +125,13 @@ Section 03: Understanding events and buffers in Node.js: Building reactive apps
 
 24. What are events in Node.js and why are they important ?
 -open link: https://nodejs.org/api/events.html
+
+25. Creating and using event emitters in Node.js
+-create folder 02-events and myEvents.js file
+-in myEvents.js file add logic for event emitter
+-type command: node --watch myEvents.js
+-create myEventClass.js file and class Chat
+-type command: node --watch myEventClass.js
+-create myErrorEvents.js file
+-in myErrorEvents.js file add logic for emitting error event
+-type command: node --watch myErrorEvents.js
