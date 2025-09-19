@@ -135,3 +135,12 @@ Section 03: Understanding events and buffers in Node.js: Building reactive apps
 -create myErrorEvents.js file
 -in myErrorEvents.js file add logic for emitting error event
 -type command: node --watch myErrorEvents.js
+
+26. Building a real-time chat app with custom events in Node.js
+-create folder chatApp
+-in folder chatApp create files chatRoom.js and index.js
+-in chatRoom.js file create and export class ChatRoom with methods
+-in index.js file import class ChatRoom and create variable const chat
+-invoke three events chat.on()
+-invoke methods chat.join(), chat.sendMessage() and chat.leave()
+-type command: node --watch index.js
