@@ -117,3 +117,11 @@ Section 02: Getting started with Node.js: From core concepts to modules and file
 
 23. The internal architecture of Node.js: Event loop and thread pool
 -create folder images and add an image of internal architecture
+
+
+
+Section 03: Understanding events and buffers in Node.js: Building reactive apps
+
+
+24. What are events in Node.js and why are they important ?
+-open link: https://nodejs.org/api/events.html
