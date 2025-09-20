@@ -176,3 +176,14 @@ Section 04: Building web servers with native HTTP module in Node.js
 -open route: http://localhost:8000
 
 32. Deep dive into HTTP request handling and server routing in Node.js
+
+33. Building a custom server with Node.js: Hands-on coding session
+-in package.json file add command start
+-type command: npm start
+-in index.js file update logic for incoming request
+-open route: http://localhost:8000
+-add switch case
+-open route: http://localhost:8000
+-open route: http://localhost:8000/about
+-open route: http://localhost:8000/contact-us
+-open route: http://localhost:8000/test
