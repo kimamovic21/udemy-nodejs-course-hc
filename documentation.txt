@@ -162,3 +162,6 @@ Section 04: Building web servers with native HTTP module in Node.js
 
 29. Introduction to HTTP protocol and its role in web communications
 -open link: https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview
+
+30. HTTP methods and status codes explained for backend developers
+-open link: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status
