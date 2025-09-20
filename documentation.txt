@@ -154,3 +154,11 @@ Section 03: Understanding events and buffers in Node.js: Building reactive apps
 -in bufferBasic.js file import object Buffer
 -create more buf variables
 -type command: node --watch bufferBasic.js
+
+
+
+Section 04: Building web servers with native HTTP module in Node.js
+
+
+29. Introduction to HTTP protocol and its role in web communications
+-open link: https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview
