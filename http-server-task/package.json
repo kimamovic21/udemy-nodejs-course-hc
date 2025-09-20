@@ -1,0 +1,19 @@
+{
+  "name": "http-server-task",
+  "version": "1.0.0",
+  "description": "HTTP Server Task",
+  "keywords": [
+    "http"
+  ],
+  "license": "ISC",
+  "author": "Kerim Imamovic",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start" : "node --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@types/node": "^24.5.2"
+  }
+}

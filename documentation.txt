@@ -191,3 +191,16 @@ Section 04: Building web servers with native HTTP module in Node.js
 34. Using API clients to test Node.js HTTP endpoints
 -open link: https://www.postman.com
 -open Postman on your local machine
+
+35. Challenge: Build a custom task with native HTTP server in Node.js
+-create folder http-server-task
+-create task.md file
+-type command: npm init
+-create index.js file
+-type command: npm i @types/node
+-in package.json file add command start
+-create .gitignore file to ignore folder node_modules and log.txt file
+-type command: npm start
+-open Postman and create collection HTTP Server Task for endpoints
+-create and test four endpoints
+-in index.js file add logic from task.md file
