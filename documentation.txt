@@ -187,3 +187,7 @@ Section 04: Building web servers with native HTTP module in Node.js
 -open route: http://localhost:8000/about
 -open route: http://localhost:8000/contact-us
 -open route: http://localhost:8000/test
+
+34. Using API clients to test Node.js HTTP endpoints
+-open link: https://www.postman.com
+-open Postman on your local machine
