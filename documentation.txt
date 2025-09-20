@@ -165,3 +165,12 @@ Section 04: Building web servers with native HTTP module in Node.js
 
 30. HTTP methods and status codes explained for backend developers
 -open link: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status
+
+31. Creating a basic HTTP server with core Node.js modules
+-create folder http-server and index.js file
+-type command: npm init
+-type command: npm i @types/node
+-create .gitignore file to ignore folder node_modules
+-in index.js file add logic for basic http server
+-type command: node --watch index.js
+-open route: http://localhost:8000
