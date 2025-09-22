@@ -235,3 +235,20 @@ Section 05: Express.js fundamentals and Book Store project
 -difference between symbols ~ and ^
 
 39. REST API design principles for modern backend development
+
+40. Book store API - setting up routes and controllers (Part 1)
+-type command: mkdir express-book-store
+-add README.md file
+-type command: npm init
+-type command: npm i @types/node @types/express -D
+-create .gitignore file to ignore folder node_modules
+-type command: npm i express
+-in package.json file add command start
+-create index.js file
+-type command: npm run dev
+-open route: http://localhost:8000
+-invoke function app.get() for fetching all books
+-open route: http://localhost:8000/books
+-invoke function app.get() for fetching book by id
+-open route: http://localhost:8000/books/:id
+-test endpoints in Postman
