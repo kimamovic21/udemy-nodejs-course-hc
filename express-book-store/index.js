@@ -10,30 +10,24 @@ const books = [
   { id: 2, title: 'Book Two', author: 'Author Two' },
 ];
 
-// Middlewares (Plugins)
-app.use(express.json());
-
-app.use((req, res, next) => {
-  console.log('I am Middleware A');
-  // return res.json({ msg: 'I am Middleware A' });
-  next();
-});
-
-app.use((req, res, next) => {
-  console.log('I am Middleware B');
-  // return res.json({ msg: 'I am Middleware B' });
-  next();
-});
-
-app.use((req, res, next) => {
+function loggerMiddleware(req, res, next) {
   const log = `\n[${Date.now()}] ${req.method} ${req.path}`;
   console.log(log);
   fs.appendFileSync('logs.txt', log, 'utf-8');
   next();
-});
+};
+
+function customMiddleware(req, res, next) {
+  console.log('I am a custom middleware');
+  next();
+};
+
+// Middlewares (Plugins)
+app.use(express.json());
+app.use(loggerMiddleware);
 
 // Routes
-app.get('/books', (req, res) => {
+app.get('/books', customMiddleware, (req, res) => {
   res.json(books);
 });
 

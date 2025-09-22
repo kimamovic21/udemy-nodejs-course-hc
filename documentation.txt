@@ -268,3 +268,8 @@ Section 06: Deep dive into advanced Express.js features including Middleware, Mo
 42. Understanding Middleware functions and their execution in Express.js
 -in index.js file invoke app.use() middleware functions
 -in .gitignore add logs.txt
+
+43. Advanced Middleware concepts and custom middleware implementation
+-in index.js file create function loggerMiddleware()
+-create function customMiddleware()
+-in function app.get() for fetching all books add function customMiddleware as argument
