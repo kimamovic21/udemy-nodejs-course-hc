@@ -49,7 +49,16 @@
 5. **Add Book to Array**: Push the new book into the `books` array.
 6. **Send Success Response**: Respond with the updated book list or a success message.
 
-### Step 7: Set Up DELETE Route to Remove a Book by ID
+### Step 7: Set Up PUT Route to Update a Book by ID
+
+1. **Define PUT Route**: Use `app.put('/books/:id', (req, res) => {...});` to create a route for updating a book.
+2. **Extract Book ID**: Get the `id` from `req.params` and convert it to a number.
+3. **Find Book**: Use `books.find()` to locate the book with the matching `id`.
+4. **Handle Not Found**: If the book does not exist, respond with a `404` status and an error message.
+5. **Update Book Data**: Get the updated `title` and `author` from `req.body`. Update the book's properties if provided.
+6. **Send Success Response**: Respond with the updated book object.
+
+### Step 8: Set Up DELETE Route to Remove a Book by ID
 
 1. **Define DELETE Route**: Use `app.delete('/books/:id', (req, res) => {...});`.
 2. **Retrieve Book ID**: Extract `id` from `req.params`.
@@ -57,13 +66,14 @@
 4. **Check Deletion**: If no book was deleted, send a `404` response.
 5. **Send Confirmation**: Return a success message indicating the book was deleted, or send the updated book list.
 
-### Step 8: Test the Routes
+### Step 9: Test the Routes
 
 1. **Start the Server**: Run `node index.js` and check for the confirmation message.
 2. **Use Postman or cURL**: Demonstrate how to test each route using Postman or cURL:
    - `GET /books`
    - `GET /books/:id`
    - `POST /books`
+   - `PUT /books/:id`
    - `DELETE /books/:id`
 
 ---
