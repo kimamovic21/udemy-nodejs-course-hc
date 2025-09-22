@@ -233,3 +233,5 @@ Section 05: Express.js fundamentals and Book Store project
 -open link: https://docs.npmjs.com/about-semantic-versioning
 -npm packages update types: major, minor & patch
 -difference between symbols ~ and ^
+
+39. REST API design principles for modern backend development
