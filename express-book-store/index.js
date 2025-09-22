@@ -1,3 +1,4 @@
+const fs = require('node:fs');
 const express = require('express');
 
 const app = express();
@@ -11,6 +12,25 @@ const books = [
 
 // Middlewares (Plugins)
 app.use(express.json());
+
+app.use((req, res, next) => {
+  console.log('I am Middleware A');
+  // return res.json({ msg: 'I am Middleware A' });
+  next();
+});
+
+app.use((req, res, next) => {
+  console.log('I am Middleware B');
+  // return res.json({ msg: 'I am Middleware B' });
+  next();
+});
+
+app.use((req, res, next) => {
+  const log = `\n[${Date.now()}] ${req.method} ${req.path}`;
+  console.log(log);
+  fs.appendFileSync('logs.txt', log, 'utf-8');
+  next();
+});
 
 // Routes
 app.get('/books', (req, res) => {

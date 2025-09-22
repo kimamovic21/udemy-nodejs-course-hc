@@ -259,3 +259,12 @@ Section 05: Express.js fundamentals and Book Store project
 -invoke function app.use(express.json())
 -invoke function app.delete() for deleting a book from an array
 -test endpoints for all methods in Postman
+
+
+
+Section 06: Deep dive into advanced Express.js features including Middleware, Modularization 
+
+
+42. Understanding Middleware functions and their execution in Express.js
+-in index.js file invoke app.use() middleware functions
+-in .gitignore add logs.txt
