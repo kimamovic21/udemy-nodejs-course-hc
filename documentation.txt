@@ -227,3 +227,9 @@ Section 05: Express.js fundamentals and Book Store project
 -type command: npm start
 -open route: http://localhost:8000
 -open Postman and test your endpoints
+
+38. Understanding semantic versioning in Node.js projects
+-open link: https://docs.npmjs.com
+-open link: https://docs.npmjs.com/about-semantic-versioning
+-npm packages update types: major, minor & patch
+-difference between symbols ~ and ^
