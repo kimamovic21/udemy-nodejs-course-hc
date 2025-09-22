@@ -297,3 +297,12 @@ Section 06: Deep dive into advanced Express.js features including Middleware, Mo
 -in logger.js file move function loggerMiddleware() from index.js file
 -type command: npm start
 -open Postman and test all endpoints
+
+46. The Model-View-Controller (MVC) pattern in scalable API architecture
+-create folder controllers and book.controller.js file
+-create folder models and book.js file
+-in book.js file create and export class Book 
+-in book.controller.js file create and export controller functions
+-in book.routes.js file import controller functions
+-update logic for routes
+-open Postman and test all endpoints
