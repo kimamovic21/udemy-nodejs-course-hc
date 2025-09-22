@@ -273,3 +273,13 @@ Section 06: Deep dive into advanced Express.js features including Middleware, Mo
 -in index.js file create function loggerMiddleware()
 -create function customMiddleware()
 -in function app.get() for fetching all books add function customMiddleware as argument
+
+44. Creating and integrating custom modules in Node.js projects
+-Types of modules: built in, 3rd party and custom defined
+-create folder custom-modules
+-type command: npm init
+-type command: npm i @types/node -D
+-create .gitignore file to ignore folder node_modules
+-in folder custom-modules create folder lib and files math.js and string.js
+-create index.js file
+-in index.js file import and invoke functions from files math.js and string.js
