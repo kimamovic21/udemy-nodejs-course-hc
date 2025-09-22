@@ -212,3 +212,18 @@ Section 05: Express.js fundamentals and Book Store project
 
 36. Introduction to Express framework and its core features
 -open link: https://expressjs.com
+
+37. Creating your first Express app and file structure setup
+-create folder express-setup
+-type command: npm init
+-open link: https://www.npmjs.com/package/@types/node/v/22.0.0
+-open link: https://www.npmjs.com/package/@types/express/v/5.0.2
+-open link: https://www.npmjs.com/package/express/v/5.0.1
+-type commands: npm i @types/node @types/express express
+-create .gitignore file to ignore folder node_modules
+-create index.js file
+-in index.js file add basic Express setup
+-in package.json file add command start
+-type command: npm start
+-open route: http://localhost:8000
+-open Postman and test your endpoints

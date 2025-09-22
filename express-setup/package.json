@@ -1,0 +1,21 @@
+{
+  "name": "express-setup",
+  "version": "1.0.0",
+  "description": "Express setup",
+  "keywords": [
+    "express"
+  ],
+  "license": "ISC",
+  "author": "Kerim Imamovic",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.5.2",
+    "express": "^5.1.0"
+  }
+}
