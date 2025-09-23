@@ -336,3 +336,35 @@ Section 07: Building Full-stack
 -type command: docker compose up
 -type command: docker compose up -d
 -type command: docker compose down
+
+50. Installing and configuring Drizzle ORM with PostgreSQL
+-open link: https://orm.drizzle.team/docs/get-started
+-open link: https://orm.drizzle.team/docs/get-started/postgresql-new
+-create folder drizzle and drizzle.config.js file
+-type command: npm init
+-create .gitignore file to ignore folder node_modules and .env file
+-create files .env and example.env
+-in .env file create variable DATABASE_URL
+-type command: npm start
+-open link: https://www.npmjs.com/package/drizzle-orm/v/1.0.0-beta.1-c4ae133
+-open link: https://www.npmjs.com/package/pg/v/6.0.0
+-open link: https://www.npmjs.com/package/dotenv/v/13.0.0
+-open link: https://www.npmjs.com/package/drizzle-kit/v/1.0.0-beta.1-f92627f
+-open link: https://www.npmjs.com/package/tsx/v/4.7.0
+-open link: https://www.npmjs.com/package/@types/pg/v/8.15.0
+-type command: npm i drizzle-orm pg dotenv
+-type command: npm i -D drizzle-kit tsx @types/pg
+-create folder db and index.js file
+-in db/index.js file add basic Drizzle setup from documentation
+-type command:  docker compose up -d
+-in folder drizzle create schema.js file
+-in schema.js file create and export variable const usersTable
+-in drizzle.config.js file add basic Drizzle setup from documentation
+-type command: npx drizzle-kit push
+-update docker-compose.yml file
+-type command: npx drizzle-kit studio
+-open link: https://local.drizzle.studio
+-create index.js file
+-in index.js file create async functions getAllUsers() and createUser()
+-in package.json file add command start
+-type command: npm start

@@ -2,8 +2,12 @@ services:
   db:
     image: postgres:17.4
     ports:
-      - "5432:5432"
+      - "5433:5432"
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: admin
+      POSTGRES_PASSWORD: MySecret123
       POSTGRES_DB: udemy-nodejs-course-hc-books-db
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+volumes:
+  pg_data:
