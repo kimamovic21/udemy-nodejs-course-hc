@@ -306,3 +306,13 @@ Section 06: Deep dive into advanced Express.js features including Middleware, Mo
 -in book.routes.js file import controller functions
 -update logic for routes
 -open Postman and test all endpoints
+
+
+
+Section 07: Building Full-stack 
+
+
+47. Intro to databases: SQL vs NoSQL for modern applications
+-Relational DB - SQL
+-Non relation DB - No SQL
+-One to many vs many to many
