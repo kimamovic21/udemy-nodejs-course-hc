@@ -316,3 +316,9 @@ Section 07: Building Full-stack
 -Relational DB - SQL
 -Non relation DB - No SQL
 -One to many vs many to many
+
+48. What is an ORM and why use it in application development
+-ORM - Object relation mapping
+-open link: https://orm.drizzle.team
+-open link: https://www.prisma.io
+-open link: https://mongoosejs.com
