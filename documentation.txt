@@ -322,3 +322,17 @@ Section 07: Building Full-stack
 -open link: https://orm.drizzle.team
 -open link: https://www.prisma.io
 -open link: https://mongoosejs.com
+
+49. Setting up PostgreSQL with Docker for local development
+-open link: https://www.postgresql.org
+-open link: https://neon.com
+-open link: https://supabase.com
+-open link: https://www.docker.com
+-open Docker app
+-type command: docker --version
+-open link: https://hub.docker.com/_/postgres
+-create folder node-orm and docker-compose.yml file
+-in docker-compose.yml file add basic Docker setup
+-type command: docker compose up
+-type command: docker compose up -d
+-type command: docker compose down
