@@ -1,4 +1,5 @@
-const books = require('../db/books.js');
+const booksTable = require('../models/book.model');
+const db = require('../db/index');
 
 function getAllBooks(req, res) {
   res.json(books);

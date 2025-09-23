@@ -368,3 +368,34 @@ Section 07: Building Full-stack
 -in index.js file create async functions getAllUsers() and createUser()
 -in package.json file add command start
 -type command: npm start
+
+51. Migrating Book store app to Drizzle ORM - Part 1: Schema setup
+-in folder express-book-store create docker-compose.yml file
+-in docker-compose.yml file add basic Docker setup
+-type command: cat docker-compose.yml    
+-type command: npm i dotenv drizzle-orm pg drizzle-kit
+-type command: npm start
+-create files .env and example.env
+-in .env file create variable DATABASE_URL
+-open route: http://localhost:8000/books
+-create folders drizzle and db
+-in folder db create index.js file
+-in db/index.js file add code from documentation
+-open link: https://www.uuidgenerator.net
+-in folder models create book.model.js file
+-in book.model.js file create and export variable const booksTable
+-create author.model.js file
+-in author.model.js file create and export variable const authorsTable
+-in folder models create index.js file
+-in models/index.js file import and export variables const booksTable and const authorsTable
+-in index.js file add import for package dotenv
+-create drizzle.config.js file
+-in drizzle.config.js file add code from documentation
+-type command: docker compose down
+-type command: docker compose up -d
+-type command: npx drizzle-kit studio
+-type command: npx drizzle-kit push
+-open link: https://local.drizzle.studio/
+-open Drizzle studio and create new users and books
+-in book.controller.js file import variables const booksTable and const db
+-delete files books.js and book.js
