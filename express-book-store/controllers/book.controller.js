@@ -1,8 +1,21 @@
-const { eq } = require('drizzle-orm');
+const { eq, sql } = require('drizzle-orm');
 const booksTable = require('../models/book.model');
 const db = require('../db/index');
 
 async function getAllBooks(req, res) {
+  const searchParams = req.query.search;
+
+  if (searchParams) {
+    const books = await db
+      .select()
+      .from(booksTable)
+      .where(
+        sql`to_tsvector('english', ${booksTable.title}) @@ to_tsquery('english', ${searchParams})`
+      );
+
+    return res.json(books);
+  };
+
   const books = await db.select().from(booksTable);
   res.json(books);
 };

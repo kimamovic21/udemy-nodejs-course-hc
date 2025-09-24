@@ -409,3 +409,13 @@ Section 07: Building Full-stack
 -open Drizzle Kit Studio and create a new user
 -open Postman and test all endpoints
 -create new environment variable BASE_URL
+-open route: {{BASE_URL}}/books
+
+54. Using indexes in PostgreSQL to speed up queries
+-open link: https://orm.drizzle.team/docs/guides/postgresql-full-text-search
+-in book.controller.js file, in function getAllBooks() add logic for query params
+-open route: {{BASE_URL}}/books
+-open route: {{BASE_URL}}/books?search=node
+-in book.model.js file update variable const booksTable to use function index
+-type command: npx drizzle-kit push
+-open Postman and test endpoint for method Get all books
