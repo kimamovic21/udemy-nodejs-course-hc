@@ -431,3 +431,10 @@ Section 07: Building Full-stack
 -test all endpoints for authors
 
 Task: Create functions updateAuthor and deleteAuthor
+
+
+
+Section 08: Authentication & Authorization
+
+
+56. Understanding authentication vs authorization with real-world example
