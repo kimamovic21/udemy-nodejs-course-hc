@@ -419,3 +419,13 @@ Section 07: Building Full-stack
 -in book.model.js file update variable const booksTable to use function index
 -type command: npx drizzle-kit push
 -open Postman and test endpoint for method Get all books
+
+55. Adding foreign key relationships: Authors and Books
+-create author.controller.js file and controller functions
+-create author.routes.js file and routes functions
+-in index.js file create variable const authorRoute
+-invoke function app.use() for authors
+-open Postman and create folders Books and Authors
+-create new variables BOOK_ID and AUTHOR_ID
+-open route: {{BASE_URL}}/authors/{{AUTHOR_ID}}/books
+-test all endpoints for authors

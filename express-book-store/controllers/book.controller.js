@@ -1,5 +1,6 @@
 const { eq, sql } = require('drizzle-orm');
-const booksTable = require('../models/book.model');
+const booksTable = require('../models/book.model.js');
+const authorsTable = require('../models/author.model.js');
 const db = require('../db/index');
 
 async function getAllBooks(req, res) {
@@ -23,10 +24,11 @@ async function getAllBooks(req, res) {
 async function getBookById(req, res) {
   const bookId = req.params.id;
 
-  const book = await db
+  const [book] = await db
     .select()
     .from(booksTable)
     .where((table => eq(table.id, bookId)))
+    .leftJoin(authorsTable, eq(booksTable.authorId, authorsTable.id))
     .limit(1);
 
   if (!book) {
