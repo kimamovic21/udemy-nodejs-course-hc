@@ -404,3 +404,8 @@ Section 07: Building Full-stack
 -in book.controller.js file add to functions keyword async
 -update functions to use Drizzle query logic
 -open route: http://localhost:8000/books
+
+53. Testing your APIs using Postman
+-open Drizzle Kit Studio and create a new user
+-open Postman and test all endpoints
+-create new environment variable BASE_URL
