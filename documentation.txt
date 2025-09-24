@@ -399,3 +399,8 @@ Section 07: Building Full-stack
 -open Drizzle studio and create new users and books
 -in book.controller.js file import variables const booksTable and const db
 -delete files books.js and book.js
+
+52. Migrating book store to Drizzle ORM - Part 2: Query logic
+-in book.controller.js file add to functions keyword async
+-update functions to use Drizzle query logic
+-open route: http://localhost:8000/books

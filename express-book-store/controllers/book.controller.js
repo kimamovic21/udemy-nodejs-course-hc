@@ -1,20 +1,20 @@
+const { eq } = require('drizzle-orm');
 const booksTable = require('../models/book.model');
 const db = require('../db/index');
 
-function getAllBooks(req, res) {
+async function getAllBooks(req, res) {
+  const books = await db.select().from(booksTable);
   res.json(books);
 };
 
-function getBookById(req, res) {
-  const id = parseInt(req.params.id);
+async function getBookById(req, res) {
+  const bookId = req.params.id;
 
-  if (isNaN(id)) {
-    return res.status(400).json({
-      error: `Id must be of type number`
-    });
-  };
-
-  const book = books.find(book => book.id === id);
+  const book = await db
+    .select()
+    .from(booksTable)
+    .where((table => eq(table.id, bookId)))
+    .limit(1);
 
   if (!book) {
     return res.status(404).json({
@@ -25,8 +25,8 @@ function getBookById(req, res) {
   return res.json(book);
 };
 
-function createBook(req, res) {
-  const { title, author } = req.body;
+async function createBook(req, res) {
+  const { title, description, authorId } = req.body;
 
   if (!title || title === '') {
     return res.status(400).json({
@@ -34,38 +34,33 @@ function createBook(req, res) {
     });
   };
 
-  if (!author || author === '') {
+  if (!authorId || authorId === '') {
     return res.status(400).json({
       error: `Author is required!`
     });
   };
 
-  const id = books.length + 1;
-  const newBook = { id, title, author };
+  const newBook = await db
+    .insert(booksTable)
+    .values({ title, description, authorId })
+    .returning({ id: booksTable.id });
 
-  books.push(newBook);
-
-  res.status(201).json(newBook);
+  return res.status(201).json({
+    message: 'Book created successfully',
+    id: newBook.id
+  });
 };
 
-function updateBook(req, res) {
-  const id = parseInt(req.params.id);
+async function updateBook(req, res) {
+  const bookId = req.params.id;
 
-  if (isNaN(id)) {
+  if (!bookId || bookId === '') {
     return res.status(400).json({
-      error: `Id must be of type number`
+      error: `Book Id is required!`
     });
   };
 
-  const book = books.find(book => book.id === id);
-
-  if (!book) {
-    return res.status(404).json({
-      error: `Book with id ${id} does not exists!`
-    });
-  };
-
-  const { title, author } = req.body;
+  const { title, description, authorId } = req.body;
 
   if (title === '') {
     return res.status(400).json({
@@ -73,40 +68,58 @@ function updateBook(req, res) {
     });
   };
 
-  book.title = title;
-
-  if (author === '') {
+  if (authorId === '') {
     return res.status(400).json({
       error: `Author cannot be empty!`
     });
   };
 
-  book.author = author;
+  const existingBook = await db
+    .select()
+    .from(booksTable)
+    .where((table) => eq(table.id, bookId))
+    .limit(1);
 
-  return res.status(200).json(book);
+  if (!existingBook || existingBook.length === 0) {
+    return res.status(404).json({
+      error: `Book with id ${bookId} does not exists!`
+    });
+  };
+
+  const updateData = {};
+
+  if (title !== undefined) updateData.title = title;
+  if (description !== undefined) updateData.description = description;
+  if (authorId !== undefined) updateData.authorId = authorId;
+
+  const updatedBook = await db
+    .update(booksTable)
+    .set(updateData)
+    .where(eq(booksTable.id, bookId))
+    .returning();
+
+  return res.status(200).json(updatedBook[0]);
 };
 
-function deleteBook(req, res) {
-  const id = parseInt(req.params.id);
+async function deleteBook(req, res) {
+  const bookId = req.params.id;
 
-  if (isNaN(id)) {
-    return res.status(400).json({
-      error: `Id must be of type number`
-    });
-  };
+  const existingBook = await db
+    .select()
+    .from(booksTable)
+    .where(eq(booksTable.id, bookId))
+    .limit(1);
 
-  const indexToDelete = books.findIndex(book => book.id === id);
-
-  if (indexToDelete < 0) {
+  if (!existingBook || existingBook.length === 0) {
     return res.status(404).json({
-      error: `Book with id ${id} does not exists!`
+      message: `Book with id: ${bookId} not found`
     });
   };
 
-  books.splice(indexToDelete, 1);
+  await db.delete(booksTable).where(eq(booksTable.id, bookId));
 
   return res.status(200).json({
-    message: `Book with id: ${id} successfully deleted!`
+    message: `Book with id: ${bookId} successfully deleted!`
   });
 };
 
