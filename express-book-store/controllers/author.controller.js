@@ -18,7 +18,7 @@ async function getAuthorById(req, res) {
 
   if (!author) {
     return res.status(404).json({
-      error: `Author with id ${authorId} does not exists!`
+      error: `Author with id: ${authorId} does not exists!`
     });
   };
 
@@ -60,7 +60,58 @@ async function createAuthor(req, res) {
     }).returning({ id: authorsTable.id });
 
   return res.status(201).json({
-    message: `Author has been created`, id: newUser.id
+    message: `Author has been created!`, id: newUser.id
+  });
+};
+
+async function updateAuthor(req, res) {
+  const authorId = req.params.id;
+
+  const { lastName, email } = req.body;
+
+  const [author] = await db
+    .select()
+    .from(authorsTable)
+    .where(eq(authorsTable.id, authorId));
+
+  if (!author) {
+    return res.status(404).json({
+      error: `Author with id ${authorId} does not exists!`
+    });
+  };
+
+  const [updatedAuthor] = await db
+    .update(authorsTable)
+    .set({ lastName, email })
+    .where(eq(authorsTable.id, authorId))
+    .returning();
+
+  return res.status(200).json({
+    message: `Author with id ${authorId} has been updated!`,
+    author: updatedAuthor
+  });
+};
+
+async function deleteAuthor(req, res) {
+  const authorId = req.params.id;
+
+  const [author] = await db
+    .select()
+    .from(authorsTable)
+    .where(eq(authorsTable.id, authorId));
+
+  if (!author) {
+    return res.status(404).json({
+      error: `Author with id: ${authorId} does not exists!`
+    });
+  };
+
+  await db.delete(booksTable).where(eq(booksTable.authorId, authorId));
+
+  await db.delete(authorsTable).where(eq(authorsTable.id, authorId));
+
+  return res.status(200).json({
+    message: `Author with id: ${authorId} and their books have been deleted!`
   });
 };
 
@@ -69,4 +120,6 @@ module.exports = {
   getAuthorById,
   getAllBooksByAuthorId,
   createAuthor,
+  updateAuthor,
+  deleteAuthor
 };

@@ -429,3 +429,5 @@ Section 07: Building Full-stack
 -create new variables BOOK_ID and AUTHOR_ID
 -open route: {{BASE_URL}}/authors/{{AUTHOR_ID}}/books
 -test all endpoints for authors
+
+Task: Create functions updateAuthor and deleteAuthor
