@@ -443,9 +443,53 @@ Section 08: Authentication & Authorization
 
 58. Implementing session-based authentication in Node.js applications
 -type command: mkdir node-auth
+-type command: cd node-auth
 -type command: npm i @types/node express @types/express
 -create .gitignore file
 -create index.js file with Basic Express setup
 -in package.json file add command start
 -invoke functions app.post() for sign up, sign in and private-data
 -open Postman and test endpoints
+
+59. Adding session-based authentication support using Drizzle ORM
+-type command: mkdir auth-session
+-type command: cd auth-session
+-type command: npm init
+-type command: npm i express
+-type command: npm i @types/node @types/express -D
+-create .gitignore file
+-create index.ts file with Basic Express setup
+-in package.json file add command start, build and dev
+-type command: npm i drizzle-orm pg dotenv
+-type command: npm i -D drizzle-kit tsx @types/pg
+-open link: https://nodejs.org/en/learn/typescript/introduction
+-type command: npm install --save-dev typescript ts-node @types/node
+-type command: npx tsc --init
+-update files package.json and tsconfig.json
+-type command: npm start
+-create folder db and files index.js and schema.ts with Basic Drizzle ORM setup
+-in schema.ts file create and export variable const usersTable
+-create drizzle.config.ts file with Basic Drizzle ORM setup
+-open Docker to setup local database
+-type command: docker ps
+-create docker-compose.yml file with basic Docker setup
+-type command: docker-compose up -d
+-type command: docker ps
+-in .env file create variables PORT and DATABASE_URL
+-in package.json file add commands db:push and db:studio
+-type command: npm run db:studio
+-type command: npm run db:push
+-open route: https://local.drizzle.studio
+-open link: https://nodejs.org/api/crypto.html
+-create folder routes and user.routes.ts file
+-in user.routes.ts file create route '/signup' for function signUpUser
+-create folder controllers and user.controller.ts file
+-in user.controller.ts file create controller function signUpUser()
+-in index.js file import variable userRouter
+-open Postman and test endpoint for route signup
+-in schema.ts file create and export variable const userSession
+-type command: npm run db:push
+-open route: https://local.drizzle.studio
+-in user.routes.ts file create route '/login' for function loginUser
+-in user.controller.ts file create controller function loginUser()
+-open Postman and test endpoint for route login
