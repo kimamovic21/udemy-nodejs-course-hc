@@ -440,3 +440,12 @@ Section 08: Authentication & Authorization
 56. Understanding authentication vs authorization with real-world example
 
 57. What is authentication? A story-based introduction to login systems
+
+58. Implementing session-based authentication in Node.js applications
+-type command: mkdir node-auth
+-type command: npm i @types/node express @types/express
+-create .gitignore file
+-create index.js file with Basic Express setup
+-in package.json file add command start
+-invoke functions app.post() for sign up, sign in and private-data
+-open Postman and test endpoints
