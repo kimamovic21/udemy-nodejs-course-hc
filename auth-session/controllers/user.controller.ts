@@ -76,3 +76,32 @@ export async function loginUser(req: Request, res: Response) {
     .status(200)
     .json({ status: 'success', sessionId: session.id });
 };
+
+
+export async function getCurrentSession(req: Request, res: Response) {
+  const user = req.user;
+
+  if (!user) {
+    return res.status(401).json({ error: `You are not logged in! ` });
+  };
+
+  return res.json({ user });
+};
+
+
+export async function updateUser(req: Request, res: Response) {
+  const user = req.user;
+
+  if (!user) {
+    return res.status(401).json({ error: `You are not logged in! ` });
+  };
+
+  const { name } = req.body;
+
+  await db
+    .update(usersTable)
+    .set({ name })
+    .where(eq(usersTable.id, user.id));
+
+  return res.json({ status: 'success', name });
+};

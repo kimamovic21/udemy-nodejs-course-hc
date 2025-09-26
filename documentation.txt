@@ -493,3 +493,12 @@ Section 08: Authentication & Authorization
 -in user.routes.ts file create route '/login' for function loginUser
 -in user.controller.ts file create controller function loginUser()
 -open Postman and test endpoint for route login
+
+60. Building secure auth workflows using Express.js middleware functions
+-in user.controller.ts file create and export async functions getCurrentSession() and updateUser()
+-in user.routes.ts file create two routes '/' for functions getCurrentSession and updateUser
+-create folder middlewares and currentUserMiddleware.ts file
+-in currentUserMiddleware.ts file create and export async function currentUserMiddleware()
+-in user.routes.ts file import function currentUserMiddleware
+-in functions router.get() and router.patch() pass function currentUserMiddleware as argument
+-open Postman and test endpoints for routes '/' with methods GET and PATCH
