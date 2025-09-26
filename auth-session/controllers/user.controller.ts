@@ -1,7 +1,8 @@
 import { eq } from 'drizzle-orm';
 import { randomBytes, createHmac } from 'node:crypto';
 import { type Request, type Response } from 'express';
-import { usersTable, userSessions } from '../db/schema';
+import { usersTable } from '../db/schema';
+import jwt from 'jsonwebtoken';
 import db from '../db/index';
 
 export async function signUpUser(req: Request, res: Response) {
@@ -35,12 +36,14 @@ export async function signUpUser(req: Request, res: Response) {
     .json({ status: 'success', data: { userId: newUser.id } });
 };
 
+
 export async function loginUser(req: Request, res: Response) {
   const { email, password } = req.body;
 
   const [existingUser] = await db
     .select({
       id: usersTable.id,
+      name: usersTable.name,
       email: usersTable.email,
       salt: usersTable.salt,
       password: usersTable.password,
@@ -67,14 +70,19 @@ export async function loginUser(req: Request, res: Response) {
       .json({ error: `Incorrect email or password` });
   };
 
-  const [session] = await db
-    .insert(userSessions)
-    .values({ userId: existingUser.id })
-    .returning({ id: userSessions.id });
+  const payload = {
+    id: existingUser.id,
+    name: existingUser.name,
+    email: existingUser.email,
+  };
+
+  const token = jwt.sign(payload, process.env.JWT_SECRET!, {
+    expiresIn: '10m',
+  });
 
   return res
     .status(200)
-    .json({ status: 'success', sessionId: session.id });
+    .json({ status: 'success', token });
 };
 
 

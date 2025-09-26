@@ -502,3 +502,15 @@ Section 08: Authentication & Authorization
 -in user.routes.ts file import function currentUserMiddleware
 -in functions router.get() and router.patch() pass function currentUserMiddleware as argument
 -open Postman and test endpoints for routes '/' with methods GET and PATCH
+
+61. Creating stateless authentication using JWT (JSON web tokens)
+-open link: https://www.jwt.io
+-open link: https://www.npmjs.com/package/jsonwebtoken
+-open link: https://www.npmjs.com/package/@types/jsonwebtoken
+-type command: npm i jsonwebtoken
+-type command: npm i --save-dev @types/jsonwebtoken
+-in .env file create variable JWT_SECRET
+-open link: https://jwtsecrets.com and generate new jwt secret token
+-update function currentUserMiddleware() in currentUserMiddleware.ts file
+-open Postman and test endpoint for login 
+-in option Authorization add Bearer token

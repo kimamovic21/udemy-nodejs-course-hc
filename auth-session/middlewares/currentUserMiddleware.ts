@@ -1,35 +1,31 @@
-import { eq } from 'drizzle-orm';
-import { Request, Response, NextFunction } from 'express';
-import { userSessions, usersTable } from '../db/schema';
-import db from '../db';
+import { type Request, type Response, type NextFunction } from 'express';
+import jwt from 'jsonwebtoken';
 
 export async function currentUserMiddleware(
   req: Request,
   res: Response,
   next: NextFunction
 ) {
-  const sessionId = req.headers['session-id'];
+  try {
+    const tokenHeader = req.headers['authorization'];
 
-  if (!sessionId) {
-    return next();
+    if (!tokenHeader) {
+      return next();
+    };
+
+    if (!tokenHeader.startsWith('Bearer')) {
+      return res
+        .status(400)
+        .json({ error: `Authorization header must start with Bearer` });
+    };
+
+    const token = tokenHeader.split(' ')[1];
+
+    const decoded = jwt.verify(token, process.env.JWT_SECRET!);
+
+    req.user = decoded;
+    next();
+  } catch (error) {
+    next();
   };
-
-  const [sessionData] = await db
-    .select({
-      sessionId: userSessions.id,
-      userId: userSessions.userId,
-      id: usersTable.id,
-      name: usersTable.name,
-      email: usersTable.email,
-    })
-    .from(userSessions)
-    .innerJoin(usersTable, eq(usersTable.id, userSessions.userId))
-    .where(eq(userSessions.id, sessionId as string));
-
-  if (!sessionData) {
-    return next();
-  };
-
-  req.user = sessionData;
-  next();
 };
