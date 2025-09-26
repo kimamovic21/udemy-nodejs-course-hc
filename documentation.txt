@@ -514,3 +514,5 @@ Section 08: Authentication & Authorization
 -update function currentUserMiddleware() in currentUserMiddleware.ts file
 -open Postman and test endpoint for login 
 -in option Authorization add Bearer token
+
+62. Introduction to authorization and role-based access control (RBAC)
