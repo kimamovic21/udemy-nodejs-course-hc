@@ -1,7 +1,7 @@
 import { type Request, type Response, type NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 
-export async function currentUserMiddleware(
+export async function authMiddleware(
   req: Request,
   res: Response,
   next: NextFunction
@@ -27,5 +27,35 @@ export async function currentUserMiddleware(
     next();
   } catch (error) {
     next();
+  };
+};
+
+export async function ensureAuth(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  if (!req.user) {
+    return res
+      .status(401)
+      .json({ error: `You must be authenticated! ` });
+  };
+
+  next();
+};
+
+export function restrictToRole(role) {
+  return function (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) {
+    if (req.user.role !== role) {
+      return res
+        .status(401)
+        .json({ error: `You are not authorized to access this resource!` });
+    };
+
+    return next();
   };
 };

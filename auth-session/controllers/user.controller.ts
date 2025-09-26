@@ -46,6 +46,7 @@ export async function loginUser(req: Request, res: Response) {
       name: usersTable.name,
       email: usersTable.email,
       salt: usersTable.salt,
+      role: usersTable.role,
       password: usersTable.password,
     })
     .from(usersTable)
@@ -74,6 +75,7 @@ export async function loginUser(req: Request, res: Response) {
     id: existingUser.id,
     name: existingUser.name,
     email: existingUser.email,
+    role: existingUser.role,
   };
 
   const token = jwt.sign(payload, process.env.JWT_SECRET!, {

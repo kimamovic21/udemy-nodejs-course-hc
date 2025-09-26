@@ -5,13 +5,13 @@ import {
   getCurrentSession,
   updateUser
 } from '../controllers/user.controller';
-import { currentUserMiddleware } from '../middlewares/currentUserMiddleware';
+import { ensureAuth } from '../middlewares/auth.middleware';
 
 const router = express.Router();
 
 router.post('/signup', signUpUser);
 router.post('/login', loginUser);
-router.get('/', currentUserMiddleware, getCurrentSession);
-router.patch('/', currentUserMiddleware, updateUser);
+router.get('/', ensureAuth, getCurrentSession);
+router.patch('/', ensureAuth, updateUser);
 
 export default router;

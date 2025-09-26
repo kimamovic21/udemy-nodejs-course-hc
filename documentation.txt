@@ -516,3 +516,22 @@ Section 08: Authentication & Authorization
 -in option Authorization add Bearer token
 
 62. Introduction to authorization and role-based access control (RBAC)
+
+63. Implementing role-based authorization logic in Express.js applications
+-create admin.routes.ts file for admin routes
+-create admin.controller.ts file for admin controller functions
+-invoke function router.get()
+-in index.ts file import variable adminRouter
+-open Postman and test endpoint http://localhost:8000/admin/users with method GET
+-add to route admin/users option Authorization Bearer token
+-rename file currentUserMiddleware.ts to auth.middleware.ts file
+-rename function currentUserMiddleware to authMiddleware()
+-in index.ts file import function authMiddleware from auth.middleware.ts file
+-invoke function app.use(authMiddleware)
+-in auth.middleware.ts file create and export function ensureAuth()
+-in files admin.routes.ts and user.routes.ts import function ensureAuth from auth.middleware.ts file 
+-in schema.ts file add to model usersTable field rote
+-type command: npm run db:push
+-in auth.middleware.ts file create and export async function restrictToRole()
+-in admin.routes.ts file import function restrictToRole from auth.middleware.ts file
+-in function router.get() pass function restrictToRole as argument
