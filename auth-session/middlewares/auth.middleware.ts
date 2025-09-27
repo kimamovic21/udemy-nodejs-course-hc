@@ -1,8 +1,23 @@
-import { type Request, type Response, type NextFunction } from 'express';
+import {
+  type Request as ExpressRequest,
+  type Response,
+  type NextFunction
+} from 'express';
 import jwt from 'jsonwebtoken';
 
+interface AuthenticatedUser {
+  id: string;
+  name: string;
+  email: string;
+  role: string;
+};
+
+interface AuthenticatedRequest extends ExpressRequest {
+  user?: AuthenticatedUser;
+};
+
 export async function authMiddleware(
-  req: Request,
+  req: AuthenticatedRequest,
   res: Response,
   next: NextFunction
 ) {
@@ -21,7 +36,7 @@ export async function authMiddleware(
 
     const token = tokenHeader.split(' ')[1];
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET!);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET!) as AuthenticatedUser;
 
     req.user = decoded;
     next();
@@ -31,7 +46,7 @@ export async function authMiddleware(
 };
 
 export async function ensureAuth(
-  req: Request,
+  req: AuthenticatedRequest,
   res: Response,
   next: NextFunction
 ) {
@@ -44,13 +59,13 @@ export async function ensureAuth(
   next();
 };
 
-export function restrictToRole(role) {
+export function restrictToRole(role: string) {
   return function (
-    req: Request,
+    req: AuthenticatedRequest,
     res: Response,
     next: NextFunction
   ) {
-    if (req.user.role !== role) {
+    if (!req.user || req.user.role !== role) {
       return res
         .status(401)
         .json({ error: `You are not authorized to access this resource!` });

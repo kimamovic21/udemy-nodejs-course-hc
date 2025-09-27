@@ -535,3 +535,7 @@ Section 08: Authentication & Authorization
 -in auth.middleware.ts file create and export async function restrictToRole()
 -in admin.routes.ts file import function restrictToRole from auth.middleware.ts file
 -in function router.get() pass function restrictToRole as argument
+
+Types improvements in files auth.middleware.ts & user.controller.ts
+-in auth.middleware.ts file create interfaces AuthenticatedUser and  AuthenticatedRequest
+-in user.controller.ts file create interface AuthenticatedRequest

@@ -87,8 +87,16 @@ export async function loginUser(req: Request, res: Response) {
     .json({ status: 'success', token });
 };
 
+interface AuthenticatedRequest extends Request {
+  user?: {
+    id: string;
+    name: string;
+    email: string;
+    role: string;
+  };
+};
 
-export async function getCurrentSession(req: Request, res: Response) {
+export async function getCurrentSession(req: AuthenticatedRequest, res: Response) {
   const user = req.user;
 
   if (!user) {
@@ -98,8 +106,7 @@ export async function getCurrentSession(req: Request, res: Response) {
   return res.json({ user });
 };
 
-
-export async function updateUser(req: Request, res: Response) {
+export async function updateUser(req: AuthenticatedRequest, res: Response) {
   const user = req.user;
 
   if (!user) {
