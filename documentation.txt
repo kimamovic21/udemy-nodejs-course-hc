@@ -565,3 +565,15 @@ Section 09: No SQL with MongoDB - Bonus
 -update file tsconfig.json
 -in index.js file add basic Express setup
 -type command: npm run dev
+
+66. MongoDB Mongoose setup
+-open link: https://mongoosejs.com
+-open link: https://www.npmjs.com/package/mongoose
+-open link: https://www.npmjs.com/package/@types/mongoose/v/3.8.40
+-type command: npm i mongoose
+-type command: npm i -D @types/mongoose
+-create folder db and connection.ts file
+-in connection.ts file create and export async function connectMongoDB()
+-in index.ts file import and invoke function connectMongoDB()
+-create folder models and user.model.ts file
+-in user.model.ts file create and export variable const User
