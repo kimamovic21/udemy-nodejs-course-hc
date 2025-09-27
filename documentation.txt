@@ -463,7 +463,8 @@ Section 08: Authentication & Authorization
 -type command: npm i drizzle-orm pg dotenv
 -type command: npm i -D drizzle-kit tsx @types/pg
 -open link: https://nodejs.org/en/learn/typescript/introduction
--type command: npm install --save-dev typescript ts-node @types/node
+-open link: https://www.npmjs.com/package/typescript
+-type command: npm i -D typescript ts-node tsx
 -type command: npx tsc --init
 -update files package.json and tsconfig.json
 -type command: npm start
@@ -546,3 +547,21 @@ Section 09: No SQL with MongoDB - Bonus
 
 
 64. Introduction to MongoDB (No SQL)
+
+65. MongoDB Atlas and Node Express app setup
+-open link: https://www.mongodb.com/products/platform/atlas-database
+-create new project in MongoDB Atlas
+-type command: mkdir node-mongodb
+-type command: cd node-mongodb   
+-type command: npm init
+-create files .env and example.env
+-in .env file create variables PORT and DATABASE_URL
+-create .gitignore file
+-create index.ts file
+-type command: https://www.npmjs.com/package/mongodb
+-type command: npm i express mongodb dotenv
+-type command: npm install -D @types/node @types/express tsx
+-in package.json file add commands start, dev and build
+-update file tsconfig.json
+-in index.js file add basic Express setup
+-type command: npm run dev
