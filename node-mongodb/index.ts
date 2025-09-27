@@ -1,6 +1,7 @@
 import express, { type Request, type Response } from 'express';
 import { connectMongoDB } from './db/connection.js';
 import dotenv from 'dotenv';
+import userRouter from './routes/user.routes';
 
 dotenv.config();
 
@@ -16,6 +17,8 @@ connectMongoDB(process.env.DATABASE_URL!)
   });
 
 app.use(express.json());
+
+app.use('/user', userRouter);
 
 app.get('/', (req: Request, res: Response) => {
   res.status(200).json({ msg: 'Welcome to Node.js MongoDB App!' });

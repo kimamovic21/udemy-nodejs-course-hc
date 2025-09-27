@@ -577,3 +577,15 @@ Section 09: No SQL with MongoDB - Bonus
 -in index.ts file import and invoke function connectMongoDB()
 -create folder models and user.model.ts file
 -in user.model.ts file create and export variable const User
+
+67. Creating a basic CRUD application with MongoDB and Express
+-type command: npm i jsonwebtoken
+-type command: npm i -D @types/jsonwebtoken
+-update user.model.ts file with field password
+-create folder routes and user.routes.ts file
+-in user.routes.ts file invoke functions router.post() for sign up and login
+-create folder controllers and user.controller.ts file
+-in user.controller.ts file create and export async functions signUpUser() and loginUser()
+-in index.ts file import variable userRouter
+-invoke function app.use() for route '/user'
+-open Postman and test endpoints for routes signup and login
