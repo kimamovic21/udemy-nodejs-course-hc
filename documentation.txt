@@ -616,3 +616,16 @@ Section 10: Mega project - URL Shortener project with auth, PostgreSQL & Drizzle
 -type command: mkdir url-shortener
 -type command: cd url-shortener
 -create README.md file
+
+72. Bootstrapping a clean Express server setup for backend development
+-type command: npm init
+-type command: ni index.ts
+-create Basic Node.js Express app with Typescript setup based on previous projects
+-create files .env and example.env
+-in .env file create variable PORT
+-create .gitignore file
+-update tsconfig.json file
+-in package.json file add commands dev, start and build
+-type command: npm run dev
+-type command: npm run build
+-open Postman and test endpoint for home route
