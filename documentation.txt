@@ -609,3 +609,10 @@ Section 09: No SQL with MongoDB - Bonus
 Section 10: Mega project - URL Shortener project with auth, PostgreSQL & Drizzle ORM
 
 70. Overview of the URL Shortener project
+
+71. Tech stack: Express, Drizzle ORM, JWT, PostgreSQL and Zod
+-open link: https://bitly.com
+-open link: https://zod.dev
+-type command: mkdir url-shortener
+-type command: cd url-shortener
+-create README.md file
