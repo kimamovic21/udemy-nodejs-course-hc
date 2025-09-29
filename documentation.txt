@@ -603,3 +603,9 @@ Section 09: No SQL with MongoDB - Bonus
 
 69. Node.js Mongoose aggregation pipeline introduction
 -open link: https://www.mongodb.com/docs/manual/aggregation
+
+
+
+Section 10: Mega project - URL Shortener project with auth, PostgreSQL & Drizzle ORM
+
+70. Overview of the URL Shortener project
