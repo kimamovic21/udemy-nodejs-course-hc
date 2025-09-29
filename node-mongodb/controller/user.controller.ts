@@ -1,5 +1,5 @@
 import { randomBytes, createHmac } from 'crypto';
-import { Request, Response } from 'express';
+import { type Request, type Response } from 'express';
 import { User } from '../models/user.model';
 import jwt from 'jsonwebtoken';
 
@@ -94,6 +94,37 @@ export async function loginUser(req: Request, res: Response) {
       .json({ status: 'success', token });
   } catch (error) {
     res
+      .status(500)
+      .json({ message: 'Internal server error!', error });
+  };
+};
+
+interface AuthenticatedRequest extends Request {
+  user?: {
+    _id: string;
+    name: string;
+    email: string;
+  };
+};
+
+export async function updateUserProfile(
+  req: Request,
+  res: Response,
+) {
+  try {
+    const { name } = req.body;
+
+    const { _id } = (req as AuthenticatedRequest).user || {};
+
+    if (!_id) {
+      return res.status(401).json({ error: 'User not authenticated!' });
+    };
+
+    await User.findByIdAndUpdate(_id, { name });
+
+    return res.status(200).json({ status: 'success' });
+  } catch (error) {
+    return res
       .status(500)
       .json({ message: 'Internal server error!', error });
   };

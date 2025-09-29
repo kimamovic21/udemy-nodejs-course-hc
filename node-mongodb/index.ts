@@ -1,5 +1,6 @@
 import express, { type Request, type Response } from 'express';
 import { connectMongoDB } from './db/connection.js';
+import { authMiddleware } from './middlewares/auth.middleware.js';
 import dotenv from 'dotenv';
 import userRouter from './routes/user.routes';
 
@@ -17,6 +18,7 @@ connectMongoDB(process.env.DATABASE_URL!)
   });
 
 app.use(express.json());
+app.use(authMiddleware);
 
 app.use('/user', userRouter);
 

@@ -589,3 +589,14 @@ Section 09: No SQL with MongoDB - Bonus
 -in index.ts file import variable userRouter
 -invoke function app.use() for route '/user'
 -open Postman and test endpoints for routes signup and login
+
+68. Authentication middleware with Express and MongoDB
+-create folder middlewares and auth.middleware.ts file
+-in auth.middleware.ts file create and export async functions authMiddleware() and ensureAuth()
+-in index.ts file import function authMiddleware
+-invoke function app.use(authMiddleware)
+-in user.routes.ts file import function ensureAuth
+-invoke route router.patch() for updating user profile
+-in user.controller.ts file create and export async function updateUserProfile()
+-in user.routes.ts file import function updateUserProfile
+-open Postman and test endpoints for login and update profile
