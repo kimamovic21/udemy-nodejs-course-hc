@@ -629,3 +629,12 @@ Section 10: Mega project - URL Shortener project with auth, PostgreSQL & Drizzle
 -type command: npm run dev
 -type command: npm run build
 -open Postman and test endpoint for home route
+
+73. Configuring PostgreSQL with Docker for local development environment
+-open Docker app
+-type command: ni docker-compose.yml
+-in docker-compose.yml file add basic Docker setup for database
+-in .env file create variable DATABASE_URL
+-type command: docker ps
+-type command: docker compose up -d
+-type command: docker ps
