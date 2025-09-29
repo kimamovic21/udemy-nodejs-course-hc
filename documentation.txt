@@ -650,3 +650,7 @@ Section 10: Mega project - URL Shortener project with auth, PostgreSQL & Drizzle
 -type command: npm run db:push
 -type command: npm run db:studio
 -open link: https://local.drizzle.studio
+
+75. Designing and implementing the User schema using Drizzle ORM
+-in user.model.ts file update variable const usersTable
+-type command: npm run db:push
