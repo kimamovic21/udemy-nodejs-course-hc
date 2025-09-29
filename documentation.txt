@@ -600,3 +600,6 @@ Section 09: No SQL with MongoDB - Bonus
 -in user.controller.ts file create and export async function updateUserProfile()
 -in user.routes.ts file import function updateUserProfile
 -open Postman and test endpoints for login and update profile
+
+69. Node.js Mongoose aggregation pipeline introduction
+-open link: https://www.mongodb.com/docs/manual/aggregation
