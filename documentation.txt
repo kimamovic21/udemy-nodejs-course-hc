@@ -638,3 +638,15 @@ Section 10: Mega project - URL Shortener project with auth, PostgreSQL & Drizzle
 -type command: docker ps
 -type command: docker compose up -d
 -type command: docker ps
+
+74. Installing and setting up Drizzle ORM for database
+-type command: npm i drizzle-orm pg dotenv
+-type command: npm i -D drizzle-kit tsx @types/pg
+-create folder db and index.ts file
+-create folder models and files user.model.ts and index.ts
+-create drizzle.config.ts file
+-add code from documentation
+-in package.json file add commands db:push and db:studio
+-type command: npm run db:push
+-type command: npm run db:studio
+-open link: https://local.drizzle.studio
