@@ -654,3 +654,13 @@ Section 10: Mega project - URL Shortener project with auth, PostgreSQL & Drizzle
 75. Designing and implementing the User schema using Drizzle ORM
 -in user.model.ts file update variable const usersTable
 -type command: npm run db:push
+
+76. Creating a secure sign up route
+-create folder controllers and user.controller.ts file
+-in user.controller.ts file create and export async function signUpUser()
+-create folder routes and user.routes.ts file
+-in user.routes.ts file create variable const router
+-import function signUpUser
+-in index.ts file import variable userRouter
+-invoke function app.use() for router '/user'
+-open Postman and test endpoint for sign up route
