@@ -1,9 +1,7 @@
-import { createHmac, randomBytes } from 'crypto';
 import { type Request, type Response } from 'express';
-import { eq } from 'drizzle-orm';
-import { usersTable } from '../models';
 import { signUpPostRequestBodySchema } from '../validation/request.validation';
-import db from '../db';
+import { hashPasswordWithSalt } from '../utils/hash';
+import { createNewUser, getUserByEmail } from '../services/user.service';
 
 export async function signUpUser(req: Request, res: Response) {
   try {
@@ -17,10 +15,7 @@ export async function signUpUser(req: Request, res: Response) {
 
     const { firstName, lastName, email, password } = validationResult.data;
 
-    const [existingUser] = await db
-      .select({ id: usersTable.id })
-      .from(usersTable)
-      .where(eq(usersTable.email, email));
+    const existingUser = await getUserByEmail(email);
 
     if (existingUser) {
       return res
@@ -28,22 +23,15 @@ export async function signUpUser(req: Request, res: Response) {
         .json({ error: `User with email ${email} already exists!` });
     };
 
-    const salt = randomBytes(32).toString('hex');
-    const hashedPassword = createHmac('sha256', salt)
-      .update(password)
-      .digest('hex');
+    const { salt, password: hashedPassword } = hashPasswordWithSalt(password);
 
-    const [user] = await db
-      .insert(usersTable)
-      .values({
-        firstName,
-        lastName,
-        email,
-        password: hashedPassword,
-        salt,
-        updatedAt: new Date(),
-      })
-      .returning({ id: usersTable.id });
+    const user = await createNewUser({
+      firstName,
+      lastName,
+      email,
+      password: hashedPassword,
+      salt,
+    });
 
     return res
       .status(201)
