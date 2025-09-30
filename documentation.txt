@@ -698,3 +698,12 @@ Section 10: Mega project - URL Shortener project with auth, PostgreSQL & Drizzle
 -in user.routes.ts file import function loginUser
 -invoke function router.post() for route '/login'
 -open Postman and test endpoint for login route
+
+80. Refactoring: Extracting JWT sign and verify logic into utility functions
+-in folder utils create token.ts file
+-in token.ts file create and export async function createUserToken()
+-in folder validation create token.validation.ts file
+-in token.validation.ts file create and export variable const userTokenSchema
+-in token.ts file import variable userTokenSchema
+-in user.controller.ts file import and invoke function createUserToken()
+-open Postman and test endpoint for login route

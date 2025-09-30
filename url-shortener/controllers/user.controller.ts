@@ -5,7 +5,7 @@ import {
 } from '../validation/request.validation';
 import { hashPasswordWithSalt } from '../utils/hash';
 import { createNewUser, getUserByEmail } from '../services/user.service';
-import jwt from 'jsonwebtoken';
+import { createUserToken } from '../utils/token';
 
 export async function signUpUser(req: Request, res: Response) {
   try {
@@ -76,7 +76,7 @@ export async function loginUser(req: Request, res: Response) {
         .json({ error: `Invalid credentials!` })
     };
 
-    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET!);
+    const token = await createUserToken({ id: user.id });
 
     return res.status(200).json({ message: 'success', token });
   } catch (err) {
