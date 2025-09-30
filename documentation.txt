@@ -664,3 +664,13 @@ Section 10: Mega project - URL Shortener project with auth, PostgreSQL & Drizzle
 -in index.ts file import variable userRouter
 -invoke function app.use() for router '/user'
 -open Postman and test endpoint for sign up route
+
+77. Adding Zod for validating incoming user signup and login data
+-open link: https://www.npmjs.com/package/zod
+-type command: npm i zod
+-create folder validation and request.validation.ts file
+-in request.validation.ts file create and export variable const signUpPostRequestBodySchema
+-in user.controller.ts file import variable signUpPostRequestBodySchema
+-update function signUpUser()
+-update user.model.ts file
+-open Postman and test endpoint for sign up route

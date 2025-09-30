@@ -2,17 +2,20 @@ import { createHmac, randomBytes } from 'crypto';
 import { type Request, type Response } from 'express';
 import { eq } from 'drizzle-orm';
 import { usersTable } from '../models';
+import { signUpPostRequestBodySchema } from '../validation/request.validation';
 import db from '../db';
 
 export async function signUpUser(req: Request, res: Response) {
   try {
-    const { firstName, lastName, email, password } = req.body;
+    const validationResult = await signUpPostRequestBodySchema.safeParseAsync(req.body);
 
-    if (!firstName || !lastName || !email || !password) {
+    if (validationResult.error) {
       return res
         .status(400)
-        .json({ error: 'All fields are required.' });
+        .json({ error: validationResult.error.format() });
     };
+
+    const { firstName, lastName, email, password } = validationResult.data;
 
     const [existingUser] = await db
       .select({ id: usersTable.id })
