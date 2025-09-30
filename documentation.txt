@@ -716,3 +716,10 @@ Section 10: Mega project - URL Shortener project with auth, PostgreSQL & Drizzle
 -in index.ts file import function authenticationMiddleware
 -invoke function app.use(authenticationMiddleware)
 -open Postman and test endpoint for login route
+
+82. Handling shorten URL requests via POST and generating unique shortcodes
+-in folder models create url.model.ts file
+-in url.model.ts file create and export variable const urlsTable
+-in index.ts file export variable urlsTable
+-type command: npm run db:push
+-open route: https://local.drizzle.studio
