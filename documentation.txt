@@ -707,3 +707,12 @@ Section 10: Mega project - URL Shortener project with auth, PostgreSQL & Drizzle
 -in token.ts file import variable userTokenSchema
 -in user.controller.ts file import and invoke function createUserToken()
 -open Postman and test endpoint for login route
+
+81. Creating authentication middleware to extract and validate current user 
+-create folder middlewares and auth.middleware.ts file
+-in auth.middleware.ts file create and export async function authenticationMiddleware()
+-in token.ts file create and export async function validateUserToken()
+-in auth.middleware.ts import function validateUserToken
+-in index.ts file import function authenticationMiddleware
+-invoke function app.use(authenticationMiddleware)
+-open Postman and test endpoint for login route
