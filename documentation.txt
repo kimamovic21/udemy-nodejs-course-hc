@@ -723,3 +723,18 @@ Section 10: Mega project - URL Shortener project with auth, PostgreSQL & Drizzle
 -in index.ts file export variable urlsTable
 -type command: npm run db:push
 -open route: https://local.drizzle.studio
+
+83. Creating a schema for shortened URLs using Drizzle ORM
+-open link: https://www.npmjs.com/package/nanoid
+-type command: npm i nanoid
+-in folder controllers create url.controller.ts file
+-in url.controller.ts file create and export async function createShortenURL()
+-in folder routes create url.routes.ts file
+-in url.routes.ts file import function createShortenURL
+-invoke function router.post() for route '/shorten-url'
+-in request.validation.ts file create and export variable shortenPostRequestBodySchema
+-in url.controllers.ts file import variable shortenPostRequestBodySchema
+-in index.ts file import variable urlRouter
+-invoke function app.use(urlRouter)
+-open Postman and add option Authorization for route '/shorten-url'
+-test endpoint for route '/shorten-url' with POST method

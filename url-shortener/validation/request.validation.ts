@@ -39,3 +39,14 @@ export const loginPostRequestBodySchema = z.object({
     .min(8, { message: 'Password must be at least 8 characters long' })
     .max(128, { message: 'Password must be at most 128 characters long' }),
 });
+
+export const shortenPostRequestBodySchema = z.object({
+  userUrl: z
+    .string()
+    .trim()
+    .url({ message: 'Invalid URL format' })
+    .min(3, { message: 'URL must be at least 3 characters long' })
+    .max(1024, { message: 'URL must be at most 1024 characters long' }),
+
+  userCode: z.string().optional()
+});

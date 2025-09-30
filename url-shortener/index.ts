@@ -1,6 +1,7 @@
 import express, { type Request, type Response } from 'express';
 import { authenticationMiddleware } from './middlewares/auth.middleware';
-import userRouter from './routes/user.routes.js';
+import userRouter from './routes/user.routes';
+import urlRouter from './routes/url.routes';
 import 'dotenv/config';
 
 const app = express();
@@ -11,6 +12,7 @@ app.use(express.json());
 app.use(authenticationMiddleware);
 
 app.use('/user', userRouter);
+app.use('/shorten-url', urlRouter);
 
 app.get('/', (req: Request, res: Response) => {
   res.status(200).send({ message: `URL Shortener API` });
