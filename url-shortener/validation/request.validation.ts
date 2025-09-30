@@ -24,3 +24,18 @@ export const signUpPostRequestBodySchema = z.object({
     .min(8, { message: 'Password must be at least 8 characters long' })
     .max(128, { message: 'Password must be at most 128 characters long' }),
 });
+
+export const loginPostRequestBodySchema = z.object({
+  email: z
+    .string()
+    .toLowerCase()
+    .refine((val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val), {
+      message: 'Invalid email address',
+    })
+    .max(55, { message: 'Email must be at most 55 characters long' }),
+
+  password: z
+    .string()
+    .min(8, { message: 'Password must be at least 8 characters long' })
+    .max(128, { message: 'Password must be at most 128 characters long' }),
+});

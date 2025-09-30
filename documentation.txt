@@ -683,3 +683,18 @@ Section 10: Mega project - URL Shortener project with auth, PostgreSQL & Drizzle
 -create folder services and user.service.ts file
 -in user.service.ts file create and export functions getUserByEmail() and createNewUser()
 -in user.controller.ts file import and invoke functions getUserByEmail() and createNewUser()
+-open Postman and test endpoint for sign up route
+
+79. Building a login route with JWT authentication and token response
+-in request.validation.ts file create and export variable const loginPostRequestBodySchema
+-in user.controller.ts file import variable loginPostRequestBodySchema
+-in hash.ts file update function hashPasswordWithSalt()
+-type command: npm i jsonwebtoken
+-type command: npm i -D @types/jsonwebtoken
+-in .env file create variable JWT_SECRET
+-in user.controller.ts file create and export async function loginUser()
+-import and invoke function jwt()
+-create variable const token
+-in user.routes.ts file import function loginUser
+-invoke function router.post() for route '/login'
+-open Postman and test endpoint for login route
