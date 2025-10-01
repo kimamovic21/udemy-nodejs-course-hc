@@ -760,5 +760,10 @@ Section 10: Mega project - URL Shortener project with auth, PostgreSQL & Drizzle
 
 87. Deleting URL with ownership and authorization
 -in url.controller.ts file create and export async function deleteShortenURL()
--in url.routes.ts file invoke function router.delete() for route '/:urlId'
+-in url.routes.ts file invoke function router.delete() for route '/:id'
 -open Postman and test endpoint for route '/:id' with DELETE method
+
+Updating URL with ownership and authorization
+-in url.controller.ts file create and export async function updateShortenURL()
+-in url.routes.ts file invoke function router.put() for route '/:id'
+-open Postman and test endpoint for route '/:id' with PUT method

@@ -6,6 +6,7 @@ import { urlsTable } from '../models';
 import db from '../db';
 import 'dotenv/config';
 
+
 export async function createShortenURL(req: Request, res: Response) {
   const validationResult =
     await shortenPostRequestBodySchema.safeParseAsync(req.body);
@@ -37,6 +38,7 @@ export async function createShortenURL(req: Request, res: Response) {
     });
 };
 
+
 export async function getAllUserURLs(req: Request, res: Response) {
   const userCodes = await db
     .select({
@@ -57,6 +59,59 @@ export async function getAllUserURLs(req: Request, res: Response) {
   return res.status(200).json({ userCodes });
 };
 
+
+export async function updateShortenURL(req: Request, res: Response) {
+  const userId = (req as any).user?.id;
+  const urlId = req.params.id;
+
+  const validationResult =
+    await shortenPostRequestBodySchema.safeParseAsync(req.body);
+
+  if (validationResult.error) {
+    return res.status(400).json({ error: validationResult.error.format() });
+  };
+
+  const { userUrl, userCode } = validationResult.data;
+
+  const [existingUrl] = await db
+    .select({
+      id: urlsTable.id,
+      userId: urlsTable.userId,
+    })
+    .from(urlsTable)
+    .where(and(
+      eq(urlsTable.id, urlId as string),
+      eq(urlsTable.userId, userId)
+    ));
+
+  if (!existingUrl) {
+    return res
+      .status(404)
+      .json({ error: `Short URL with id: ${urlId} not found for this user!` });
+  };
+
+  const [updated] = await db
+    .update(urlsTable)
+    .set({
+      targetURL: userUrl,
+      ...(userCode ? { shortCode: userCode } : {}),
+      updatedAt: new Date(),
+    })
+    .where(and(eq(urlsTable.id, urlId as string), eq(urlsTable.userId, userId)))
+    .returning({
+      id: urlsTable.id,
+      shortCode: urlsTable.shortCode,
+      targetURL: urlsTable.targetURL,
+      updatedAt: urlsTable.updatedAt,
+    });
+
+  return res.status(200).json({
+    message: `Short URL with id: ${urlId} updated successfully!`,
+    updated,
+  });
+};
+
+
 export async function deleteShortenURL(req: Request, res: Response) {
   const deletedCount = await db
     .delete(urlsTable)
@@ -75,6 +130,7 @@ export async function deleteShortenURL(req: Request, res: Response) {
     .status(200)
     .json({ message: `Short URL with id: ${req.params.id} successfully deleted!` });
 };
+
 
 export async function getShortenURL(req: Request, res: Response) {
   const shortCode = req.params.shortCode;
