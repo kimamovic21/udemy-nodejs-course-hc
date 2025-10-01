@@ -1,4 +1,5 @@
 import { type Request, type Response } from 'express';
+import { eq } from 'drizzle-orm';
 import { nanoid } from 'nanoid';
 import { shortenPostRequestBodySchema } from '../validation/request.validation';
 import { urlsTable } from '../models';
@@ -34,4 +35,20 @@ export async function createShortenURL(req: Request, res: Response) {
       shortCode: result?.shortCode,
       targetURL: result?.targetURL
     });
+};
+
+export async function getShortenURL(req: Request, res: Response) {
+  const shortCode = req.params.shortCode;
+  const [result] = await db
+    .select({
+      targetURL: urlsTable.targetURL,
+    })
+    .from(urlsTable)
+    .where(eq(urlsTable.shortCode, shortCode as string));
+
+  if (!result) {
+    return res.status(404).json({ error: `Short URL not found!` });
+  };
+
+  return res.redirect(result.targetURL);
 };

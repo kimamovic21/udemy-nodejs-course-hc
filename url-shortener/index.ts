@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(authenticationMiddleware);
 
 app.use('/user', userRouter);
-app.use('/shorten-url', urlRouter);
+app.use('/', urlRouter);
 
 app.get('/', (req: Request, res: Response) => {
   res.status(200).send({ message: `URL Shortener API` });

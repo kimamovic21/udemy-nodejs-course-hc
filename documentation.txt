@@ -745,3 +745,10 @@ Section 10: Mega project - URL Shortener project with auth, PostgreSQL & Drizzle
 -in function router.post() add function ensureAuth as argument
 -in url.controller.ts file update function createShortenURL()
 -test endpoint for route '/shorten-url' with POST method
+
+85. Implementing redirection logic from short URL
+-in url.controller.ts file create and export async function getShortenUrl()
+-in url.routes.ts file invoke function router.get() for route '/:shortCode'
+-in index.ts update update route for urlRouter 
+-open Postman and test endpoint for route '/shorten-url' with POST method
+-test endpoint for route '/:shortCode' with GET method
