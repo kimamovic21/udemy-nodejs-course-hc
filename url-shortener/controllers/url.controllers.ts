@@ -37,6 +37,26 @@ export async function createShortenURL(req: Request, res: Response) {
     });
 };
 
+export async function getAllUserURLs(req: Request, res: Response) {
+  const userCodes = await db
+    .select({
+      id: urlsTable.id,
+      userId: urlsTable.userId,
+      shortCode: urlsTable.shortCode,
+      targetURL: urlsTable.targetURL,
+      createdAt: urlsTable.createdAt,
+      updatedAt: urlsTable.updatedAt,
+    })
+    .from(urlsTable)
+    .where(eq(urlsTable.userId, (req as any).user?.id));
+
+  if (!userCodes || userCodes.length === 0) {
+    return res.status(200).json({ userCodes: [] });
+  };
+
+  return res.status(200).json({ userCodes });
+};
+
 export async function getShortenURL(req: Request, res: Response) {
   const shortCode = req.params.shortCode;
   const [result] = await db

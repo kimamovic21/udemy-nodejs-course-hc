@@ -752,3 +752,8 @@ Section 10: Mega project - URL Shortener project with auth, PostgreSQL & Drizzle
 -in index.ts update update route for urlRouter 
 -open Postman and test endpoint for route '/shorten-url' with POST method
 -test endpoint for route '/:shortCode' with GET method
+
+86. Fetching all shortened URLs by the logged-in user
+-in url.controller.ts file create and export async function getAllUserURLs()
+-in url.routes.ts file invoke function router.get() for route '/codes'
+-test endpoint for route '/codes' with GET method
