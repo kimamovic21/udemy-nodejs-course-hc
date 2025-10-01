@@ -1,5 +1,5 @@
 import { type Request, type Response } from 'express';
-import { eq } from 'drizzle-orm';
+import { eq, and } from 'drizzle-orm';
 import { nanoid } from 'nanoid';
 import { shortenPostRequestBodySchema } from '../validation/request.validation';
 import { urlsTable } from '../models';
@@ -55,6 +55,25 @@ export async function getAllUserURLs(req: Request, res: Response) {
   };
 
   return res.status(200).json({ userCodes });
+};
+
+export async function deleteShortenURL(req: Request, res: Response) {
+  const deletedCount = await db
+    .delete(urlsTable)
+    .where(and(
+      eq(urlsTable.id, req.params.id as string),
+      eq(urlsTable.userId, (req as any).user?.id)
+    ));
+
+  if (!deletedCount || deletedCount.rowCount === 0) {
+    return res
+      .status(404)
+      .json({ error: `Short URL with id: ${req.params.id} not found!` });
+  };
+
+  return res
+    .status(200)
+    .json({ message: `Short URL with id: ${req.params.id} successfully deleted!` });
 };
 
 export async function getShortenURL(req: Request, res: Response) {

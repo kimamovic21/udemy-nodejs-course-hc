@@ -756,4 +756,9 @@ Section 10: Mega project - URL Shortener project with auth, PostgreSQL & Drizzle
 86. Fetching all shortened URLs by the logged-in user
 -in url.controller.ts file create and export async function getAllUserURLs()
 -in url.routes.ts file invoke function router.get() for route '/codes'
--test endpoint for route '/codes' with GET method
+-open Postman and test endpoint for route '/codes' with GET method
+
+87. Deleting URL with ownership and authorization
+-in url.controller.ts file create and export async function deleteShortenURL()
+-in url.routes.ts file invoke function router.delete() for route '/:urlId'
+-open Postman and test endpoint for route '/:id' with DELETE method
