@@ -6,14 +6,6 @@ import db from '../db';
 import 'dotenv/config';
 
 export async function createShortenURL(req: Request, res: Response) {
-  const userId = (req as any).user?.id;
-
-  if (!userId) {
-    return res
-      .status(401)
-      .json({ error: `You must be logged in to access this resource! ` });
-  };
-
   const validationResult =
     await shortenPostRequestBodySchema.safeParseAsync(req.body);
 

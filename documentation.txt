@@ -738,3 +738,10 @@ Section 10: Mega project - URL Shortener project with auth, PostgreSQL & Drizzle
 -invoke function app.use(urlRouter)
 -open Postman and add option Authorization for route '/shorten-url'
 -test endpoint for route '/shorten-url' with POST method
+
+84. Refactoring: Extracting URL creation logic
+-in auth.middleware.ts file create and export function ensureAuth
+-in url.routes.ts file import function ensureAuth
+-in function router.post() add function ensureAuth as argument
+-in url.controller.ts file update function createShortenURL()
+-test endpoint for route '/shorten-url' with POST method

@@ -27,6 +27,20 @@ export async function authenticationMiddleware(
   } catch (err) {
     return res
       .status(401)
-      .send({ error: 'Invalid or expired token!' });
+      .send({ error: `Invalid or expired token!` });
   };
+};
+
+export async function ensureAuth(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  if (!(req as any).user || !(req as any).user.id) {
+    return res
+      .status(401)
+      .json({ error: `You must be logged in to access this resource!` });
+  };
+
+  next();
 };
