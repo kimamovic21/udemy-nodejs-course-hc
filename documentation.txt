@@ -778,3 +778,7 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 89. Real-world problem that Docker solve in modern development
 
 90. Understanding the difference between Docker and Virtual machines
+
+91. How to install Docker on your system for local development
+-open link: https://docs.docker.com/engine/install
+-type command: docker version
