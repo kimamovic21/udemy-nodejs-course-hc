@@ -782,3 +782,9 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 91. How to install Docker on your system for local development
 -open link: https://docs.docker.com/engine/install
 -type command: docker version
+
+92. Docker containers vs Docker images: What's the difference ?
+-open link: https://www.docker.com/resources/what-container/
+-open link: https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-an-image
+-Docker image - configuration
+-Docker container - run Docker image
