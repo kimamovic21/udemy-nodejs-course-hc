@@ -871,3 +871,14 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 -type command: docker run -it udemy-docker-express-app
 -type command: docker image inspect udemy-docker-express-app
 -type command: docker run -it udemy-docker-express-app
+
+99. Understanding and implementing port mapping in Docker containers
+-type command: docker build -t udemy-docker-express-app .
+-type command: docker run -it udemy-docker-express-app
+-open route: http://localhost:8000 in browser
+-type command: docker run -it -p 8000:8000 udemy-docker-express-app
+-open route: http://localhost:8000 in browser
+-type command: docker run -it -p 3000:8000 udemy-docker-express-app
+-open route: http://localhost:8000 in browser
+-open route: http://localhost:3000 in browser
+-open Docker application to see PORT
