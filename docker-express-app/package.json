@@ -1,0 +1,27 @@
+{
+  "name": "docker-express-app",
+  "version": "1.0.0",
+  "description": "Docker Express App",
+  "keywords": [
+    "Docker"
+  ],
+  "license": "ISC",
+  "author": "Kerim Imamovic",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch index.ts",
+    "build": "tsc",
+    "start": "npm run build && node dist/index.js"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.7.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

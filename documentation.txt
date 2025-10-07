@@ -843,3 +843,24 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 -type command: docker run -it busybox ping google.com
 -type command: docker image inspect busybox
 -type command: docker run --help
+
+97. Creating and using a Dockerfile to containerize Node.js apps
+-create basic Express.js app
+-type command: npm -v (11.5.2)
+-type command: node -v (v20.19.1)
+-create Dockerfile file
+-open link: https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04
+-in Dockerfile file add basic Docker setup
+-add commands FROM, RUN, COPY and WORKDIR
+-type command: docker build -t udemy-docker-express-app .
+-type command: docker images
+-type command: docker run -it udemy-docker-express-app
+-type command: cat index.ts
+-type command: npm -v
+-type command: node -v
+-type command: exit
+-make some small change inside the existing code
+-type command: docker build -t udemy-docker-express-app .
+-type command: docker run -it udemy-docker-express-app
+-type command: npm start
+-open route: http://localhost:8000 in browser
