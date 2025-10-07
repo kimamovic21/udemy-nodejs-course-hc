@@ -824,3 +824,22 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 -type command: docker image prune
 -type command: docker images --help
 -type command: docker image ls
+
+96. Exploring Docker container commands for management and debugging
+-type command: docker container --help
+-type command: docker run -it --name my-container ubuntu
+-type command: docker container ls
+-type command: docker kill (container id)
+-type command: docker container rm (container id)
+-type command: docker container rm --help
+-type command: docker ps
+-type command: docker ps -a
+-type command: docker container rm (container id) (container id) (container id)
+-type command: docker run -it ubuntu
+-Image: Entrypoint
+-type command: docker image inspect ubuntu
+-type command: docker run -it ubuntu ls
+-type command: docker run -it ubuntu bash
+-type command: docker run -it busybox ping google.com
+-type command: docker image inspect busybox
+-type command: docker run --help
