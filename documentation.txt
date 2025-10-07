@@ -907,3 +907,19 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 -type command: docker run -itd -P --rm udemy-docker-express-app
 -type command: docker ps
 -type command: docker stop (container id)
+
+101. Publishing Docker images to Docker hub or private registries
+-open link: https://hub.docker.com
+-open link: https://hub.docker.com/u/kimamovic21
+-open link: https://hub.docker.com/repository/create?namespace=kimamovic21
+-create new repository for Docker application
+-type command: docker build -t kimamovic21/udemy-docker-node-express-app-hc-pg .
+-type command: docker login
+-type command: docker push kimamovic21/udemy-docker-node-express-app-hc-pg
+-type command: docker run -it -P kimamovic21/udemy-docker-node-express-app-hc-pg
+-type command: docker build -t udemy-docker-express-app .
+-type command: docker push udemy-docker-express-app
+-type command: docker tag udemy-docker-express-app kimamovic21/udemy-docker-node-express-app-hc-pg
+-type command: docker push kimamovic21/udemy-docker-node-express-app-hc-pg
+-type command: docker tag udemy-docker-express-app kimamovic21/udemy-docker-node-express-app-hc-pg:v1
+-type command: docker push kimamovic21/udemy-docker-node-express-app-hc-pg:v1
