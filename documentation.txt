@@ -808,3 +808,19 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 -type command: docker run -it alpine
 -type command: docker pull busybox
 -open link: https://hub.docker.com
+
+95. Working with Docker images through command-line interface (CLI)
+-type command: docker image --help
+-type command: docker images
+-type command: docker image inspect
+-type command: docker image inspect alpine
+-type command: docker image rm alpine
+-type command: docker ps -a
+-type command: docker container --help
+-type command: docker container rm (container id)
+-type command: docker images
+-type command: docker image pull alpine
+-type command: docker images
+-type command: docker image prune
+-type command: docker images --help
+-type command: docker image ls
