@@ -864,3 +864,10 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 -type command: docker run -it udemy-docker-express-app
 -type command: npm start
 -open route: http://localhost:8000 in browser
+
+98. Best practices to optimize Docker images for speed and performance
+-update Dockerfile file 
+-type command: docker build -t udemy-docker-express-app .
+-type command: docker run -it udemy-docker-express-app
+-type command: docker image inspect udemy-docker-express-app
+-type command: docker run -it udemy-docker-express-app

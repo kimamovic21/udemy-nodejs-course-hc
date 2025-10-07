@@ -1,22 +1,18 @@
 # Base image
-FROM ubuntu
-
-# Install Node.js
-RUN apt-get update
-RUN apt install -y curl
-RUN curl -sL https://deb.nodesource.com/setup_20.x -o /tmp/nodesource_setup.sh
-RUN bash /tmp/nodesource_setup.sh
-RUN apt install -y nodejs
-RUN npx tsx
-
-# Copying the source code to docker image
-COPY index.ts /home/app/index.ts
-COPY package-lock.json /home/app/package-lock.json
-COPY package.json /home/app/package.json
-COPY tsconfig.json /home/app/tsconfig.json
+FROM node:20.17.0-alpine3.19
 
 # Set working directory
 WORKDIR /home/app/
 
+# Copying the source code to docker image
+COPY package-lock.json package-lock.json
+COPY package.json package.json
+
 # Install node modules
 RUN npm install
+
+COPY index.ts index.ts
+COPY tsconfig.json tsconfig.json
+COPY Dockerfile Dockerfile
+
+CMD ["npm", "start"]
