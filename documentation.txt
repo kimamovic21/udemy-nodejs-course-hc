@@ -799,3 +799,12 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 -type command: docker info
 -exit Docker desktop application
 -type command: docker info
+
+94. Running Docker containers using the CLI with practical examples
+-type command: docker ps -a
+-type command: docker run -it ubuntu
+-type command: docker run ubuntu
+-type command: exit
+-type command: docker run -it alpine
+-type command: docker pull busybox
+-open link: https://hub.docker.com
