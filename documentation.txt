@@ -882,3 +882,28 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 -open route: http://localhost:8000 in browser
 -open route: http://localhost:3000 in browser
 -open Docker application to see PORT
+
+100. Auto port mapping in Docker: Dynamic exposure of container ports
+-type command: docker build -t udemy-docker-express-app .
+-type command: docker run -it -p 8000:8000 udemy-docker-express-app
+-open route: http://localhost:8000 in browser
+-in Dockerfile file add command EXPOSE
+-type command: docker run -it udemy-docker-express-app
+-open route: http://localhost:8000 in browser
+-type command: docker inspect udemy-docker-express-app
+-type command: docker run -it -p 3000:8000 udemy-docker-express-app
+-open route: http://localhost:8000 in browser
+-open route: http://localhost:3000 in browser
+-type command: docker run -it -P udemy-docker-express-app
+-type command: docker ps
+-update Dockerfile with port range from 8000 to 8010
+-type command: docker build -t udemy-docker-express-app .
+-type command: docker run -it -P udemy-docker-express-app
+-type command: docker ps -a
+-open route: http://localhost:8000 in browser
+-type command: docker run -it -P --rm udemy-docker-express-app
+-type command: docker run --help
+-stop Docker container in Cursor terminal
+-type command: docker run -itd -P --rm udemy-docker-express-app
+-type command: docker ps
+-type command: docker stop (container id)

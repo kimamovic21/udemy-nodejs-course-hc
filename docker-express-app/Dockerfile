@@ -15,4 +15,6 @@ COPY index.ts index.ts
 COPY tsconfig.json tsconfig.json
 COPY Dockerfile Dockerfile
 
+EXPOSE 8000-8010
+
 CMD ["npm", "start"]
