@@ -959,3 +959,29 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 -type command: docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' my-container
 -type command: docker exec my-container-2 ping 172.17.0.2
 -type command: docker network ls
+
+105. Creating and using custom Docker bridges for network isolation
+-type command: docker network
+-type command: docker network create
+-type command: docker network create --help
+-type command: docker network create milkyway
+-type command: docker network ls
+-type command: docker run -itd --network=milkyway --rm --name=spiderman busybox
+-type command: docker network inspect milkyway
+-type command: docker run -itd --network=milkyway --rm --name=ironman busybox
+-type command: docker network inspect milkyway
+-type command: docker run -itd --network=milkyway --rm --name=dr nginx
+-type command: docker network inspect milkyway
+-type command: docker ps
+-type command: docker exec spiderman ping 172.17.0.3
+-type command: docker exec my-container-2 ping 172.17.0.2
+-type command: docker exec spiderman ping 172.17.0.3
+-type command: docker exec spiderman ping ironman
+-type command: docker exec spiderman ping dr
+-type command: docker network
+-type command: docker network connect milkyway my-container-2
+-type command: docker inspect milkyway
+-type command: docker exec spiderman ping my-container-2
+-type command: docker network disconnect milkyway dr
+-type command: docker exec spiderman ping dr
+-type command: docker network rm milkyway
