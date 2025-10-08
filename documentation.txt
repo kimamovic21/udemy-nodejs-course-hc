@@ -940,3 +940,22 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 -update Dockerfile file
 -type command: docker run -it -p 3000:3000 -e PORT=3000 docker-express-app
 -type command: docker run -it -p 3000:3000 --env-file .env docker-express-app
+
+104. Understanding Docker bridge networking for container communication
+-open link: https://docs.docker.com/engine/network
+-type command: docker run -it busybox
+-type command: ping google.com
+-type command: docker network
+-type command: docker network ls
+-type command: docker container ps -a
+-type command: docker run -itd --name=my-container --rm busybox
+-type command: docker container ps
+-type command: docker network ls
+-type command: docker network inspect bridge
+-type command: docker run -itd --name=my-container-2 --rm busybox
+-type command: docker network inspect bridge
+-type command: docker ps
+-type command: docker exec my-container-2 ping my-container
+-type command: docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' my-container
+-type command: docker exec my-container-2 ping 172.17.0.2
+-type command: docker network ls
