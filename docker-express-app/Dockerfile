@@ -1,20 +1,31 @@
 # Base image
-FROM node:20.17.0-alpine3.19
+FROM node:20-alpine3.19 AS base
 
-# Set working directory
-WORKDIR /home/app/
+# Stage 1: Builder
+FROM base AS builder
 
-# Copying the source code to docker image
-COPY package-lock.json package-lock.json
-COPY package.json package.json
+WORKDIR /home/build
 
-# Install node modules
+COPY package*.json ./
+COPY tsconfig.json ./
+
 RUN npm install
 
-COPY index.ts index.ts
-COPY tsconfig.json tsconfig.json
-COPY Dockerfile Dockerfile
+COPY src/ src/
+COPY .env ./
 
-EXPOSE 8000-8010
+RUN npm run build
 
-CMD ["npm", "start"]
+# Stage 2: Runner
+FROM base AS runner
+
+WORKDIR /home/app
+
+COPY --from=builder /home/build/dist ./dist
+COPY --from=builder /home/build/package*.json ./
+
+RUN npm install --omit=dev
+
+EXPOSE ${PORT:-8000}
+
+CMD ["node", "dist/index.js"]

@@ -923,3 +923,15 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 -type command: docker push kimamovic21/udemy-docker-node-express-app-hc-pg
 -type command: docker tag udemy-docker-express-app kimamovic21/udemy-docker-node-express-app-hc-pg:v1
 -type command: docker push kimamovic21/udemy-docker-node-express-app-hc-pg:v1
+
+102. Building optimized multi-stage Docker images for production use
+-type command: npm run build
+-type command: npm start
+-create folder src
+-move index.ts file to folder src
+-update Dockerfile file
+-update tsconfig.json file
+-type command: docker build -t docker-express-app .
+-type command: docker run -it -p 8000:8000 docker-express-app
+-open route: http://localhost:8000
+-type command: docker run -it docker-express-app
