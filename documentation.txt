@@ -935,3 +935,8 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 -type command: docker run -it -p 8000:8000 docker-express-app
 -open route: http://localhost:8000
 -type command: docker run -it docker-express-app
+
+103. Security best practices for running Docker containers safely
+-update Dockerfile file
+-type command: docker run -it -p 3000:3000 -e PORT=3000 docker-express-app
+-type command: docker run -it -p 3000:3000 --env-file .env docker-express-app

@@ -12,7 +12,6 @@ COPY tsconfig.json ./
 RUN npm install
 
 COPY src/ src/
-COPY .env ./
 
 RUN npm run build
 
@@ -26,6 +25,12 @@ COPY --from=builder /home/build/package*.json ./
 
 RUN npm install --omit=dev
 
-EXPOSE ${PORT:-8000}
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system -uid 1001 nodejs
+
+USER nodejs
+
+EXPOSE 8000
+ENV PORT=8000
 
 CMD ["node", "dist/index.js"]
