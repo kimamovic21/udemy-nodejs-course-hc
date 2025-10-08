@@ -985,3 +985,7 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 -type command: docker network disconnect milkyway dr
 -type command: docker exec spiderman ping dr
 -type command: docker network rm milkyway
+
+106. Docker other modes of networking
+-type command: docker run -it --rm --network=none busybox
+-type command: google.com
