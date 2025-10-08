@@ -989,3 +989,27 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 106. Docker other modes of networking
 -type command: docker run -it --rm --network=none busybox
 -type command: google.com
+
+107. Attaching host machine volumes to Docker containers for data sharing
+-type command: docker run -it --rm ubuntu
+-type command: cd home
+-type command: cd ubuntu
+-type command: ls
+-type command: cat >> secret.txt
+-type command: ls
+-type command: cat secret.txt
+-type command: docker run -it --rm ubuntu
+-type command: cd home
+-type command: cd ubuntu
+-type command: ls
+-create my-data.ts file
+-type command: docker run -it --rm -v /Users/BNC/Desktop/my-data:/home/ubuntu/kerim ubuntu
+-type command: cd home
+-type command: ls
+-type command: cd ubuntu
+-type command: ls
+-type command: cd kerim
+-type command: ls
+-type command: cat >> secret.txt
+-type command: ls
+-type command: rm -rf index.ts
