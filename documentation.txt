@@ -1053,3 +1053,10 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 -type command: docker compose up -d
 -type command: npm run build
 -type command: npm start
+
+110. Networking in Docker compose
+-open link: https://docs.docker.com/compose/how-tos/networking
+-type command: docker network ls
+-type command: docker compose up -d
+-type command: docker network ls
+-update docker-compose-yml file

@@ -10,9 +10,20 @@ services:
       POSTGRES_DB: postgres
     ports:
       - "5431:5432"
+    networks:
+      - frontend
+      - backend
 
   redis:
     image: redis:7-alpine
     container_name: redis
     ports:
       - "6379:6379"
+    networks:
+      - frontend
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
