@@ -1035,3 +1035,21 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 -type command: docker run -it --rm -v custom_data:/home/ubuntu/custom ubuntu
 -type command: cd home/ubuntu/custom
 -type command: ls
+
+109. Introduction to Docker compose
+-type command: mkdir docker-express-redis-app
+-type command: cd docker-express-redis-app
+-copy files .env, example.env, .gitignore, Dockerfile, tsconfig.json, package.json and package.lock.json from previous project
+-create folder app and server.ts file with basic Express setup
+-create folder src and index.ts file with Basic Redis setup
+-type command: npm i
+-opel link: https://www.npmjs.com/package/ioredis
+-type command: npm i ioredis pg
+-type command: npm i --save-dev @types/pg 
+-open route: http://localhost:8000
+-create docker-compose.yml with basic Docker setup
+-type command: docker compose up
+-type command: docker compose down -v
+-type command: docker compose up -d
+-type command: npm run build
+-type command: npm start

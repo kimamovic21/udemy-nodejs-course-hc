@@ -1,0 +1,31 @@
+{
+  "name": "docker-express-redis-app",
+  "version": "1.0.0",
+  "description": "Docker Express Redis App",
+  "keywords": [
+    "Docker"
+  ],
+  "license": "ISC",
+  "author": "Kerim Imamovic",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/app/server.ts",
+    "build": "tsc",
+    "start": "npm run build && node dist/index.js"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.7.0",
+    "@types/pg": "^8.15.5",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "ioredis": "^5.8.1",
+    "pg": "^8.16.3"
+  }
+}
