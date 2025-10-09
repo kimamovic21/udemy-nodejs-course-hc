@@ -1060,3 +1060,11 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 -type command: docker compose up -d
 -type command: docker network ls
 -update docker-compose-yml file
+
+111. Volume in Docker compose
+-update docker-compose-yml file
+-type command: docker compose down -v
+-type command: docker compose up -d
+-type command: npm run build
+-type command: npm start
+-type command: docker volume ls
