@@ -1013,3 +1013,25 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 -type command: cat >> secret.txt
 -type command: ls
 -type command: rm -rf index.ts
+
+108. Creating and managing custom named volumes in Docker for persistence
+-type command: docker volume
+-type command: docker volume ls
+-type command: docker volume create custom_data
+-type command: docker volume ls | findstr custom_data
+-type command: docker run -it --rm -v custom_data:/server ubuntu
+-type command: ls
+-type command: cd server
+-type command: cat >> ubuntu.txt
+-type command: docker volume ls | findstr custom_data
+-type command: docker run -it --rm -v custom_data:/server busybox
+-type command: ls
+-type command: cd server
+-type command: ls
+-type command: cat >> busybox.txt
+-open Docker desktop app 
+-select option Volumes to see created files
+-type command: docker run -it --rm -v custom_data:/server busybox
+-type command: docker run -it --rm -v custom_data:/home/ubuntu/custom ubuntu
+-type command: cd home/ubuntu/custom
+-type command: ls
