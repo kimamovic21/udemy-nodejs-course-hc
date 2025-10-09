@@ -1068,3 +1068,12 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 -type command: npm run build
 -type command: npm start
 -type command: docker volume ls
+
+112. Custom Docker builds
+-update docker-compose-yml file
+-update index.ts file
+-type command: docker compose down -v
+-type command: docker compose up -d
+-type command: docker compose down
+-type command: docker compose up
+-type command: docker compose up --build

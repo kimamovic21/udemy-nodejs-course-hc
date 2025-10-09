@@ -6,15 +6,15 @@ import app from './app/server';
 async function init() {
   try {
     console.log(`Connecting Redis...`);
-    const redis = new Redis('redis://localhost:6379', { lazyConnect: true });
+    const redis = new Redis('redis://redis:6379', { lazyConnect: true });
     await redis.connect();
     console.log(`Redis connection success...`);
 
     console.log(`Connecting Postgres...`);
     const { Client } = pg;
     const client = new Client({
-      host: 'localhost',
-      port: 5431,
+      host: 'db',
+      port: 5432,
       database: 'postgres',
       user: 'postgres',
       password: 'postgres',
