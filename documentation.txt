@@ -1123,3 +1123,6 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 -click button Create
 -open option Cloud Formation
 -type command: docker build -t backend .
+
+119. Cleaning up AWS ECS and ECR resources to avoid unnecessary billing
+-delete existing repository
