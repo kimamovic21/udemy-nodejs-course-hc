@@ -1080,3 +1080,18 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 
 113. Introduction to Docker orchestration and why it's crucial for production
 -open link: https://docs.docker.com/guides/orchestration
+
+114. Creating and configuring a new AWS account for ECS deployment
+-open link: https://aws.amazon.com
+-open link: https://aws.amazon.com/cli
+-type command: aws --version
+-open option Dashboard and option Users
+-click Create user button
+-create new user with admin access
+-create new Access key
+-type command: sudo aws configure
+-type your AWS access key id, AWS secret access key, default region name and default output format
+-type command: cd ./aws
+-type command: ls
+-type command: aws get-current-user
+-type command: aws iam get-user
