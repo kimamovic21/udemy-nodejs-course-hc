@@ -1116,3 +1116,10 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 -click option Health check
 -click option Interval
 -update server.ts file
+
+118. Deploying ECS services with load balancer for high quality
+-open Cluster
+-click option Service
+-click button Create
+-open option Cloud Formation
+-type command: docker build -t backend .
