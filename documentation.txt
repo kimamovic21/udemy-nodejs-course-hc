@@ -1126,3 +1126,5 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 
 119. Cleaning up AWS ECS and ECR resources to avoid unnecessary billing
 -delete existing repository
+
+120. Debugging and fixing ECS health check failures during container deployment
