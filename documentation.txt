@@ -1109,3 +1109,10 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 116. Launching and configuring ECS clusters to run Docker containers
 -open link: https://aws.amazon.com/ecs
 -click button Create button
+
+117. Defining ECS Tasks and creating task definitions for container execution
+-choose option Task definition
+-click button Create new task definition
+-click option Health check
+-click option Interval
+-update server.ts file

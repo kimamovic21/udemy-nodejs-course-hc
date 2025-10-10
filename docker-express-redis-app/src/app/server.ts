@@ -8,7 +8,11 @@ const PORT = process.env.PORT ?? 8000;
 const app = express();
 
 app.get('/', (_req, res) => {
-  res.json({ message: 'Hello from Docker Express Redis App!' });
+  return res.json({ message: 'Hello from Docker Express Redis App!' });
+});
+
+app.get('/health', (_req, res) => {
+  return res.json({ message: 'I am healthy '});
 });
 
 app.listen(PORT, () => {
