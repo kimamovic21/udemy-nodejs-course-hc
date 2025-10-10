@@ -1095,3 +1095,13 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 -type command: ls
 -type command: aws get-current-user
 -type command: aws iam get-user
+
+115. Setting up Amazon ECR to push Docker images
+-What is ECR ? - Elastic container registry
+-open link: https://aws.amazon.com/ecr
+-open option Repositories
+-create new repository
+-update Dockerfile file with variable PORT
+-type command: docker build -t backend .
+-type command: docker images
+-type commands from documentation
