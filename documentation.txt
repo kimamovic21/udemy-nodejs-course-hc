@@ -1128,3 +1128,19 @@ Section 11: Mastering Docker for developers - From basics to CLI and dockerfile 
 -delete existing repository
 
 120. Debugging and fixing ECS health check failures during container deployment
+
+
+
+Section 12: MongoDB aggregation
+
+
+121. MongoDB aggregation setup
+-open link: https://www.mongodb.com/docs/manual/core/aggregation-pipeline
+-open MongoDB Compass app
+-create new database
+-create new collections users, authors and books
+-Question: How many users are active ?
+-open MongoDB Compass app and choose option Aggregations
+-click button Add stage
+-add Stage 1: $match {"isActive": true }
+-add Stage 2: $count 'activeUsers'
