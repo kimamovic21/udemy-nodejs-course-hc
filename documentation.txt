@@ -1142,5 +1142,21 @@ Section 12: MongoDB aggregation
 -Question: How many users are active ?
 -open MongoDB Compass app and choose option Aggregations
 -click button Add stage
--add Stage 1: $match {"isActive": true }
+-add Stage 1: $match {'isActive': true }
 -add Stage 2: $count 'activeUsers'
+
+122. Grouping in MongoDB
+-open link: https://www.mongodb.com/docs/manual/reference/operator/aggregation/group
+-Question: What is the average age of all users ?
+-add Stage: $group {_id: '$age' }
+-add Stage: $group {_id: null }
+-add Stage: { _id: $gender, averageAge: { $avg: '$age' }}
+-Question: List the top 5 most common favorite fruits among the users
+-add Stage: $group { _id: '$favoriteFruit' }
+-add Stage: $group { _id: '$favoriteFruit', count: { $sum: 1 }}
+-add Stage: $sort { count: -1 }
+-add State: #limit 5
+-add Stage: $group { _id: null, averageAge: { $avg: '$age' }}
+-add Stage: $group { _id: '$favoriteFruit', count: { $sum: 1}}
+-add Stage: $sort { count: 1 }
+-add Stage: $limit 2
