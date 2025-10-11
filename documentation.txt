@@ -1170,3 +1170,13 @@ Section 12: MongoDB aggregation
 -add State: $limit 3
 -Question: List all unique eye colors present in the collection
 -add Stage: $group { _id: '$eyeColor' }
+
+124. Dealing with arrays in aggregation
+-create folder mongodb-aggregations
+-in folder mongodb-aggregations create three .csv files authors, books and users
+-Question: What is the average number of tags per user ?
+-add Stage: $unwind '$tags'
+-add Stage: $group { _id: '$_id', numberOfTags: { $sum: 1 }}
+-add Stage: $group { _id: null, averageNumberOfTags: { $avg: '$numberOfTags }}
+-add Stage: $addFields { numberOfTags: { $size: { $ifNull: ['$tags', []] }}}
+-add Stage: $group { _id: null, averageNumberOfTags: { $avg: '$numberOfTags' }} 
