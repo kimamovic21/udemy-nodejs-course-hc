@@ -1160,3 +1160,13 @@ Section 12: MongoDB aggregation
 -add Stage: $group { _id: '$favoriteFruit', count: { $sum: 1}}
 -add Stage: $sort { count: 1 }
 -add Stage: $limit 2
+
+123. Group sum and more
+-Question: Find the total number of males and females
+-add Stage: $group { _id: '$gender', genderCount: { $sum: 1 }}
+-Question: Which country has the highest number of registered users ?
+-add Stage: $group { _id: '$company.location.country', userCountryCount: { $sum: 1 }}
+-add Stage: $sort { userCount: -1 }
+-add State: $limit 3
+-Question: List all unique eye colors present in the collection
+-add Stage: $group { _id: '$eyeColor' }
