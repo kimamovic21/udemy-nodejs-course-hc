@@ -1180,3 +1180,16 @@ Section 12: MongoDB aggregation
 -add Stage: $group { _id: null, averageNumberOfTags: { $avg: '$numberOfTags }}
 -add Stage: $addFields { numberOfTags: { $size: { $ifNull: ['$tags', []] }}}
 -add Stage: $group { _id: null, averageNumberOfTags: { $avg: '$numberOfTags' }} 
+
+125. Match and project pipeline
+-open link: https://www.mongodb.com/docs/manual/reference/operator/aggregation/match
+-Question: How many users have 'enim' as one of their tags ?
+-add Stage: $match { tags: 'enim' }
+-add Stage: $count 'usersWithEnimTag'
+-Question: What are the names and age of users who are inactive and have 'velit' as a tag
+-add Stage: $match { isActive: false, tags: 'velit' }
+-open link: https://www.mongodb.com/docs/manual/reference/operator/aggregation/project
+-add Stage: $project { name: 1, age: 1 }
+-Question: How many users have a phone number starting with a +1 (940) ?
+-add Stage: $match { 'company.phone': /^\+1 \(940\)/ }
+-add Stage: $count 'usersWithSpecialPhoneNumber'
