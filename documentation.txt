@@ -1228,3 +1228,8 @@ Section 13: Building our own basecamp - Project management platform
 
 129. Understand the PRD
 -create folder project-management and PRD.md file
+
+130. Preparing Node Express project for backend
+-create Simple Basic Node Express project with Typescript setup
+-type command: npm run dev
+-open route: http://localhost:8000

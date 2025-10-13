@@ -1,0 +1,33 @@
+{
+  "name": "project-management",
+  "version": "1.0.0",
+  "description": "A project management application",
+  "keywords": [
+    "Backend",
+    "Node.js",
+    "Express.js",
+    "API",
+    "Typescript"
+  ],
+  "license": "ISC",
+  "author": "Kerim Imamovic",
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.7.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0"
+  }
+}
