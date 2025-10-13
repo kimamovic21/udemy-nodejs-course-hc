@@ -1193,3 +1193,21 @@ Section 12: MongoDB aggregation
 -Question: How many users have a phone number starting with a +1 (940) ?
 -add Stage: $match { 'company.phone': /^\+1 \(940\)/ }
 -add Stage: $count 'usersWithSpecialPhoneNumber'
+
+126. Match all operators of aggregation
+-Question: Who has registered the most recently ?
+-add Stage: $sort { registered: -1 }
+-add Stage: $limit 4
+-add State: $project { name: 1, registered: 1, favoriteFruit: 1 }
+-Question: Categorize users by their favorite fruit
+-open link: https://www.mongodb.com/docs/manual/reference/operator/update/push
+-add Stage: $group { _id: '$favoriteFruit', users: { $push: '$name' }}
+-Question: How many users have 'ad' as the second tag in their list of tags ?
+-add Stage: $match { 'tags.1': 'ad' }
+-add Stage: $count 'secondTag'
+-Question: Find users who have both 'enim' and 'id' as their tags
+-open link: https://www.mongodb.com/docs/manual/reference/operator/query/all
+-add Stage: $match { tags: { $all: ['enim', 'id'] }}
+-Question: List all companies located in the USA with their corresponding user count
+-add Stage: $match { 'company.location.country': 'USA' }
+-add Stage: $group {_id: '$company.title', userCount: { $sum: 1 }}
