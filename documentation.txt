@@ -1216,3 +1216,12 @@ Section 12: MongoDB aggregation
 -open link: https://www.mongodb.com/docs/manual/reference/operator/aggregation/lookup
 -add Stage: $lookup { from: 'authors', localField: 'author_id', foreignField: '_id', as: 'author_details' }
 -add Stage: $addFields { author_details: { $arrayElemAt: ['$author_details',0] }}
+
+
+
+Section 13: Building our own basecamp - Project management platform
+
+
+128. Building a fresh backend focused project
+-PRD (Project requirement document)
+-Project Management platform
