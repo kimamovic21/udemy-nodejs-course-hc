@@ -1233,3 +1233,11 @@ Section 13: Building our own basecamp - Project management platform
 -create Simple Basic Node Express project with Typescript setup
 -type command: npm run dev
 -open route: http://localhost:8000
+
+131. Add Prettier and Git to the code base
+-open link: https://prettier.io
+-open link: https://prettier.io/docs/install
+-open link: https://www.npmjs.com/package/prettier
+-type command: npm install --save-dev --save-exact prettier
+-type command: npx prettier . --write
+-create files .prettierrc and .prettierignore
