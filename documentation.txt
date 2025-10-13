@@ -1211,3 +1211,8 @@ Section 12: MongoDB aggregation
 -Question: List all companies located in the USA with their corresponding user count
 -add Stage: $match { 'company.location.country': 'USA' }
 -add Stage: $group {_id: '$company.title', userCount: { $sum: 1 }}
+
+127. Lookup in MongoDB aggregation
+-open link: https://www.mongodb.com/docs/manual/reference/operator/aggregation/lookup
+-add Stage: $lookup { from: 'authors', localField: 'author_id', foreignField: '_id', as: 'author_details' }
+-add Stage: $addFields { author_details: { $arrayElemAt: ['$author_details',0] }}
