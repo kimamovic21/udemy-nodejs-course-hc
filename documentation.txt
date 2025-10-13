@@ -1225,3 +1225,6 @@ Section 13: Building our own basecamp - Project management platform
 128. Building a fresh backend focused project
 -PRD (Project requirement document)
 -Project Management platform
+
+129. Understand the PRD
+-create folder project-management and PRD.md file
