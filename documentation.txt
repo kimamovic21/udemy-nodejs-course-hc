@@ -1247,3 +1247,7 @@ Section 13: Building our own basecamp - Project management platform
 -open link: https://nodejs.org/docs/latest/api/cli.html#--watch
 -type command: npm install --save-dev nodemon
 -update package.json file
+
+133. Dot env files on backend
+-type command: npm i --save-dev dotenv
+-in index.ts file import package dotenv
