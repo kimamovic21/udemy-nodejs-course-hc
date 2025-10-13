@@ -11,7 +11,7 @@
   ],
   "license": "ISC",
   "author": "Kerim Imamovic",
-  "type": "module",
+  "type": "common",
   "main": "index.ts",
   "scripts": {
     "dev": "tsx watch src/index.ts",
@@ -22,6 +22,7 @@
   "devDependencies": {
     "@types/express": "^5.0.3",
     "@types/node": "^24.7.0",
+    "nodemon": "^3.1.10",
     "prettier": "3.6.2",
     "ts-node": "^10.9.2",
     "tsx": "^4.20.6",

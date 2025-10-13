@@ -1241,3 +1241,9 @@ Section 13: Building our own basecamp - Project management platform
 -type command: npm install --save-dev --save-exact prettier
 -type command: npx prettier . --write
 -create files .prettierrc and .prettierignore
+
+132. Auto restart your server with Nodemon
+-open link: https://www.npmjs.com/package/nodemon
+-open link: https://nodejs.org/docs/latest/api/cli.html#--watch
+-type command: npm install --save-dev nodemon
+-update package.json file
