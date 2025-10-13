@@ -1251,3 +1251,11 @@ Section 13: Building our own basecamp - Project management platform
 133. Dot env files on backend
 -type command: npm i --save-dev dotenv
 -in index.ts file import package dotenv
+
+134. A professional project structure
+-folder structure: public, images, src, controllers, db, middlewares, models, routes, utils, validators
+-type command: mkdir controllers, db, middlewares, models, routes, utils, validators
+-type command: mkdir public
+-type command: cd public
+-type command: mkdir images
+-create .gitkeep file
