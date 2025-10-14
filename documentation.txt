@@ -1268,3 +1268,14 @@ Section 13: Building our own basecamp - Project management platform
 137. Separation of app with index
 -create app.ts file
 -open route: http://localhost:8000
+
+138. Express configuration and CORS
+-open link: https://www.npmjs.com/package/cors
+-type command: npm i cors
+-open link: https://www.npmjs.com/package/@types/cors
+-type command: npm i --save-dev @types/cors
+-in app.ts file import function cors from package cors
+-invoke function app.use(express.urlencoded())
+-invoke function app.use(express.static('public'))
+-in .env file create variable CORS_ORIGIN=
+-in app.ts file invoke function app.use(cors())
