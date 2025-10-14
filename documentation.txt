@@ -1286,3 +1286,7 @@ Section 13: Building our own basecamp - Project management platform
 -in folder utils create files api-response.ts and api-error.ts
 -in api-response.ts file create and export class ApiResponse
 -in api-error.ts file create and export class ApiError
+
+140. Keeping data in constants
+-in folder utils create constants.ts file
+-in constants.ts file create and export four variables
