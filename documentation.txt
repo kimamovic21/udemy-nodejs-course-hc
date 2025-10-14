@@ -1279,3 +1279,10 @@ Section 13: Building our own basecamp - Project management platform
 -invoke function app.use(express.static('public'))
 -in .env file create variable CORS_ORIGIN=
 -in app.ts file invoke function app.use(cors())
+
+139. Standard Api Responses and API errors
+-open link: https://nodejs.org/api/http.html#class-httpserverresponse
+-open link: https://nodejs.org/api/errors.html
+-in folder utils create files api-response.ts and api-error.ts
+-in api-response.ts file create and export class ApiResponse
+-in api-error.ts file create and export class ApiError
