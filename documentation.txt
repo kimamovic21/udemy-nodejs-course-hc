@@ -1298,3 +1298,10 @@ Section 13: Building our own basecamp - Project management platform
 -type command: npm i chalk
 -in db.ts file import function chalk from package chalk
 -create and export async function connectDB()
+
+142. A guide on MongoDB Atlas connection
+-open MongoDB Atlas database
+-open MongoDB Compass database
+-in index.ts file import function connectDB from db.ts file
+-invoke function connectDB()
+-update files index.ts and db.ts
