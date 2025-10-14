@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import healthCheckRouter from './routes/healthcheck.routes';
 
 dotenv.config();
 
@@ -15,5 +16,7 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Authorization', 'Content-Type'],
 }));
+
+app.use('/api/v1/healthcheck', healthCheckRouter);
 
 export default app;

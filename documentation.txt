@@ -1305,3 +1305,12 @@ Section 13: Building our own basecamp - Project management platform
 -in index.ts file import function connectDB from db.ts file
 -invoke function connectDB()
 -update files index.ts and db.ts
+
+143. Write a healthcheck controller and routes
+-in folder controllers create healthcheck.controller.ts file
+-in healthcheck.controller.ts file create and export async function healthCheck()
+-in folder routes create healthcheck.routes.ts file
+-in healthcheck.routes.ts file create and export variable const router
+-in app.ts file import variable healthCheckRouter from healthcheck.routes.ts file
+-invoke function app.use() for variable healthCheckRouter
+-open Postman and test endpoint for healthcheck route
