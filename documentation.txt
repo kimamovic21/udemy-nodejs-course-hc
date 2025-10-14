@@ -1326,3 +1326,10 @@ Section 13: Building our own basecamp - Project management platform
 -open link: https://placehold.co/200x200
 -in folder models create user.model.ts file
 -in user.model.ts file create and export variable const User
+
+146. Hash the password with pre hooks of Mongoose
+-open link: https://www.npmjs.com/package/bcrypt
+-type command: npm i bcrypt
+-open link: https://www.npmjs.com/package/@types/bcrypt
+-type command: npm install --save-dev @types/bcrypt
+-update user.model.ts file with method userSchema.pre()
