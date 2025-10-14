@@ -1264,3 +1264,7 @@ Section 13: Building our own basecamp - Project management platform
 
 136. Introducing Postman for API testing
 -open Postman app
+
+137. Separation of app with index
+-create app.ts file
+-open route: http://localhost:8000
