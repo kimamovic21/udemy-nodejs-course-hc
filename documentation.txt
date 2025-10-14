@@ -1314,3 +1314,9 @@ Section 13: Building our own basecamp - Project management platform
 -in app.ts file import variable healthCheckRouter from healthcheck.routes.ts file
 -invoke function app.use() for variable healthCheckRouter
 -open Postman and test endpoint for healthcheck route
+
+144. Catch errors better with async handlers
+-create async-handler.ts file
+-in async-handler.ts file create and export function asyncHandler()
+-in healthcheck.controller.ts file import function asyncHandler
+-create and export variable const healthCheck
