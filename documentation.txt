@@ -1320,3 +1320,9 @@ Section 13: Building our own basecamp - Project management platform
 -in async-handler.ts file create and export function asyncHandler()
 -in healthcheck.controller.ts file import function asyncHandler
 -create and export variable const healthCheck
+
+145. Learn to write user schema in Mongoose
+-open link: https://placehold.co
+-open link: https://placehold.co/200x200
+-in folder models create user.model.ts file
+-in user.model.ts file create and export variable const User
