@@ -1290,3 +1290,11 @@ Section 13: Building our own basecamp - Project management platform
 140. Keeping data in constants
 -in folder utils create constants.ts file
 -in constants.ts file create and export four variables
+
+141. How to connect with MongoDB
+-type command: npm i mongoose
+-in folder db create db.ts file
+-open link: https://www.npmjs.com/package/chalk
+-type command: npm i chalk
+-in db.ts file import function chalk from package chalk
+-create and export async function connectDB()
