@@ -1348,3 +1348,6 @@ Section 13: Building our own basecamp - Project management platform
 -type command: npm i --save-dev @types/jsonwebtoken
 -in .env file create four env variables
 -in user.model.ts file add three methods
+-type command: npm i --save-dev @types/mongoose
+-create global.d.ts file
+-update user.model.ts file with types
