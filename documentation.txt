@@ -1351,3 +1351,9 @@ Section 13: Building our own basecamp - Project management platform
 -type command: npm i --save-dev @types/mongoose
 -create global.d.ts file
 -update user.model.ts file with types
+
+151. How to generate email templates
+-open link: https://www.npmjs.com/package/mailgen
+-type command: npm i mailgen
+-in folder utils create mail.ts file
+-in mail.ts file add logic for Mailgen package
