@@ -1336,3 +1336,6 @@ Section 13: Building our own basecamp - Project management platform
 
 147. Learn to handle Mongoose methods
 -in user.model.ts file add method userSchema.methods.isPasswordCorrect
+
+148. What are JWT Tokens
+-open link: https://www.jwt.io/introduction#difference-decoding-encoding-jwt
