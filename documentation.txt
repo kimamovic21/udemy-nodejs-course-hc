@@ -1333,3 +1333,6 @@ Section 13: Building our own basecamp - Project management platform
 -open link: https://www.npmjs.com/package/@types/bcrypt
 -type command: npm install --save-dev @types/bcrypt
 -update user.model.ts file with method userSchema.pre()
+
+147. Learn to handle Mongoose methods
+-in user.model.ts file add method userSchema.methods.isPasswordCorrect
