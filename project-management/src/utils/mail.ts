@@ -1,7 +1,14 @@
 import Mailgen from 'mailgen';
 import nodemailer from 'nodemailer';
+import type SMTPTransport from 'nodemailer/lib/smtp-transport';
 
-export async function sendEmail(options) {
+interface EmailOptions {
+  email: string;
+  subject: string;
+  mailgenContent: Mailgen.Content;
+};
+
+export async function sendEmail(options: EmailOptions) {
   const mailGenerator = new Mailgen({
     theme: 'default',
     product: {
@@ -15,12 +22,12 @@ export async function sendEmail(options) {
 
   const transporter = nodemailer.createTransport({
     host: process.env.MAILTRAP_SMTP_HOST,
-    port: process.env.MAILTRAP_SMTP_PORT,
+    port: Number(process.env.MAILTRAP_SMTP_PORT),
     auth: {
       user: process.env.MAILTRAP_SMTP_USER,
       pass: process.env.MAILTRAP_SMTP_PASS
     },
-  });
+  } as SMTPTransport.Options);
 
   const mail = {
     from: 'mail.taskmanager@example.com',
@@ -40,7 +47,7 @@ export async function sendEmail(options) {
 export function emailVerificationMailgenContent(
   username: string,
   verificationUrl: string
-) {
+): Mailgen.Content {
   return {
     body: {
       name: username,
@@ -61,7 +68,7 @@ export function emailVerificationMailgenContent(
 export function forgotPasswordMailgenContent(
   username: string,
   passwordResetUrl: string
-) {
+): Mailgen.Content {
   return {
     body: {
       name: username,
@@ -70,7 +77,7 @@ export function forgotPasswordMailgenContent(
         instructions: 'To reset your password click on the following button or link',
         button: {
           color: '#22BC66',
-          text: 'Verify your email',
+          text: 'Reset your password',
           link: passwordResetUrl,
         },
       },

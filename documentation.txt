@@ -1367,3 +1367,6 @@ Section 13: Building our own basecamp - Project management platform
 -in .env file create four variables
 -in mail.ts file create and export async function sendEmail()
 -import object nodemailer from package nodemailer
+-import type SMTPTransport
+-create interface EmailOption
+-add to parameter options type EmailOptions
