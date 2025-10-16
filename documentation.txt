@@ -1370,3 +1370,8 @@ Section 13: Building our own basecamp - Project management platform
 -import type SMTPTransport
 -create interface EmailOption
 -add to parameter options type EmailOptions
+
+153. How to register a user
+-in folder controllers create auth.controller.ts file
+-in auth.controller.ts file create and export async function registerUser()
+-create and export async function generateAccessAndRefreshTokens()
