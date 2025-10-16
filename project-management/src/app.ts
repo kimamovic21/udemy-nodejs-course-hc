@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import healthCheckRouter from './routes/healthcheck.routes';
+import authRouter from './routes/auth.routes';
 
 dotenv.config();
 
@@ -18,5 +19,6 @@ app.use(cors({
 }));
 
 app.use('/api/v1/healthcheck', healthCheckRouter);
+app.use('/api/v1/auth', authRouter);
 
 export default app;

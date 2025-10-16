@@ -1375,3 +1375,9 @@ Section 13: Building our own basecamp - Project management platform
 -in folder controllers create auth.controller.ts file
 -in auth.controller.ts file create and export async function registerUser()
 -create and export async function generateAccessAndRefreshTokens()
+
+153. Routers for registering a user
+-in folder routes create auth.routes.ts file
+-in auth.routes.ts file import functions Router() and registerUser()
+-in app.ts file import variable authRouter from auth.routes.ts file
+-invoke function app.use() for variable authRouter
