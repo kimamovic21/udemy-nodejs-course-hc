@@ -1376,14 +1376,23 @@ Section 13: Building our own basecamp - Project management platform
 -in auth.controller.ts file create and export async function registerUser()
 -create and export async function generateAccessAndRefreshTokens()
 
-153. Routers for registering a user
+154. Routers for registering a user
 -in folder routes create auth.routes.ts file
 -in auth.routes.ts file import functions Router() and registerUser()
 -in app.ts file import variable authRouter from auth.routes.ts file
 -invoke function app.use() for variable authRouter
 
-154. Test register route with Postman
+155. Test register route with Postman
 -open Postman app
 -test endpoint {{BASE_URL}}/api/v1/auth/register with POST method
 -open MongoDB database to see stored user
 -open Mailtrap inbox to see sent email
+
+156. Writing custom validations
+-open link: https://www.npmjs.com/package/express-validator
+-type command: npm i express-validator
+-in folder middlewares create validator.middleware.ts file
+-in validator.middleware.ts file create and export async function validate()
+-in folder validator create index.ts file
+-in index.ts file create and export function userRegisterValidator()
+-in auth.routes.ts file import functions validate and userRegisterValidator 
