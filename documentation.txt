@@ -1357,3 +1357,13 @@ Section 13: Building our own basecamp - Project management platform
 -type command: npm i mailgen
 -in folder utils create mail.ts file
 -in mail.ts file add logic for Mailgen package
+
+152. How to send emails in Node.js
+-open link: https://mailtrap.io
+-open link: https://nodemailer.com
+-type command: npm i nodemailer
+-open link: https://www.npmjs.com/package/@types/nodemailer
+-type command: npm i --save-dev @types/nodemailer
+-in .env file create four variables
+-in mail.ts file create and export async function sendEmail()
+-import object nodemailer from package nodemailer
