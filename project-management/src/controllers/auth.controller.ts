@@ -83,7 +83,8 @@ export const registerUser = asyncHandler(async (
   return res
     .status(201)
     .json(new ApiResponse(
-      200,
-      'User registered successfully and verification email has been sent on your email')),
-    { user: createdUser }
+      201,
+      'User registered successfully and verification email has been sent on your email',
+      { user: createdUser }
+    ));
 });
