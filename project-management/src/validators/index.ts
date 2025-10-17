@@ -24,4 +24,16 @@ export function userRegisterValidator() {
       .optional()
       .trim()
   ];
-};   
+};
+
+export function userLoginValidator() {
+  return [
+    body('email')
+      .notEmpty()
+      .isEmail()
+      .withMessage('Email is invalid!'),
+    body('password')
+      .notEmpty()
+      .withMessage('Password is required!')
+  ];
+};
