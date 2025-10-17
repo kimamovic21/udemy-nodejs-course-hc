@@ -1413,3 +1413,6 @@ Section 13: Building our own basecamp - Project management platform
 -in validators/index.ts file create and export function userLoginValidator()
 -in auth.routes.ts file import function userLoginValidator
 -open Postman and test endpoint {{BASE_URL}}/api/v1/auth/login with POST method
+
+159. Write auth middleware
+-in auth.middleware.ts file create and export function verifyJWT()
