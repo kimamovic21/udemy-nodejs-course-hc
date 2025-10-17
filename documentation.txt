@@ -1396,3 +1396,15 @@ Section 13: Building our own basecamp - Project management platform
 -in folder validator create index.ts file
 -in index.ts file create and export function userRegisterValidator()
 -in auth.routes.ts file import functions validate and userRegisterValidator 
+-open Postman and and test test endpoint {{BASE_URL}}/api/v1/auth/register with POST method
+
+157. Login user with tokens and cookie data
+-open link: https://www.npmjs.com/package/cookie-parser
+-type command: npm i cookie-parser
+-open link: https://www.npmjs.com/package/@types/cookie-parser
+-type command: npm i --save-dev @types/cookie-parser
+-in app.ts file import function cookieParser from package cookie-parser
+-invoke function app.use(cookieParser())
+-in auth.controller.ts file create and export function loginUser()
+-in auth.routes.ts file import function loginUser
+-invoke method router.route() for route '/login' and function loginUser
