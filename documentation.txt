@@ -1416,3 +1416,9 @@ Section 13: Building our own basecamp - Project management platform
 
 159. Write auth middleware
 -in auth.middleware.ts file create and export function verifyJWT()
+
+160. How to securely logout a user
+-in auth.controller.ts file create and export function logoutUser()
+-in auth.routes.ts file import functions verifyJWT and logoutUser
+-invoke method router.route() for route '/logout' and function logoutUser
+-open Postman and test endpoint {{BASE_URL}}/api/v1/auth/logout with POST method

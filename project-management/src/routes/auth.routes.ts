@@ -1,7 +1,15 @@
 import { Router } from 'express';
-import { registerUser, loginUser } from '../controllers/auth.controller';
 import { validate } from '../middlewares/validator.middleware';
-import { userRegisterValidator, userLoginValidator } from '../validators/index';
+import { verifyJWT } from '../middlewares/auth.middleware';
+import {
+  userRegisterValidator,
+  userLoginValidator
+} from '../validators/index';
+import {
+  registerUser,
+  loginUser,
+  logoutUser
+} from '../controllers/auth.controller';
 
 const router = Router();
 
@@ -11,5 +19,8 @@ router
 router
   .route('/login')
   .post(userLoginValidator(), validate, loginUser);
+router
+  .route('/logout')
+  .post(verifyJWT, logoutUser);
 
 export default router;
