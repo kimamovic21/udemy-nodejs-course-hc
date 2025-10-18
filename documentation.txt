@@ -1426,3 +1426,8 @@ Section 13: Building our own basecamp - Project management platform
 161. Refresh access token and resend verification email
 -in auth.controller.ts file create and export function getCurrentUser()
 -create and export function verifyEmail(), resendEmailVerification(), refreshAccessToken()
+
+162. All password related controllers like forgot password and reset password
+-in auth.controller.ts file create and export function forgotPasswordRequest()
+-in .env file create variable FORGOT_PASSWORD_REDIRECT_URL
+-create and export functions resetForgotPassword() and changeCurrentPassword()
