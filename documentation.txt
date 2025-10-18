@@ -1422,3 +1422,7 @@ Section 13: Building our own basecamp - Project management platform
 -in auth.routes.ts file import functions verifyJWT and logoutUser
 -invoke method router.route() for route '/logout' and function logoutUser
 -open Postman and test endpoint {{BASE_URL}}/api/v1/auth/logout with POST method
+
+161. Refresh access token and resend verification email
+-in auth.controller.ts file create and export function getCurrentUser()
+-create and export function verifyEmail(), resendEmailVerification(), refreshAccessToken()
