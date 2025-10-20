@@ -1431,3 +1431,9 @@ Section 13: Building our own basecamp - Project management platform
 -in auth.controller.ts file create and export function forgotPasswordRequest()
 -in .env file create variable FORGOT_PASSWORD_REDIRECT_URL
 -create and export functions resetForgotPassword() and changeCurrentPassword()
+
+163. All routes and validators of auth
+-in validators/index.ts file create and export function userChangeCurrentPasswordValidator()
+-create and export functions userForgotPasswordValidator() and  userResetForgotPasswordValidator()
+-in auth.routes.ts file import functions from files auth.controller.ts and validators/index.ts
+-invoke more router.route() methods
