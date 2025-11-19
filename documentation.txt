@@ -1456,3 +1456,5 @@ Section 14: Mastering system design: Scaling strategies, architecture patterns, 
 168. DB Scaling multi read replication
 
 169. DB Scaling data sharding
+
+170. Monolith service architecture
