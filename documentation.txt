@@ -1450,3 +1450,5 @@ Section 14: Mastering system design: Scaling strategies, architecture patterns, 
 -in folder system-design add images from lectures
 
 166. Vertical scaling
+
+167. Horizontal scaling
