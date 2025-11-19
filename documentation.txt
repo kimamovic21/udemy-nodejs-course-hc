@@ -1454,3 +1454,5 @@ Section 14: Mastering system design: Scaling strategies, architecture patterns, 
 167. Horizontal scaling
 
 168. DB Scaling multi read replication
+
+169. DB Scaling data sharding
