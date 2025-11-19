@@ -1458,3 +1458,5 @@ Section 14: Mastering system design: Scaling strategies, architecture patterns, 
 169. DB Scaling data sharding
 
 170. Monolith service architecture
+
+171. Microservice architecture
