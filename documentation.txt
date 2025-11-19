@@ -1437,3 +1437,10 @@ Section 13: Building our own basecamp - Project management platform
 -create and export functions userForgotPasswordValidator() and  userResetForgotPasswordValidator()
 -in auth.routes.ts file import functions from files auth.controller.ts and validators/index.ts
 -invoke more router.route() methods
+
+
+
+Section 13: Building our own basecamp - Project management platform
+
+
+164. Section introduction - Introduction to system design
