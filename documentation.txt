@@ -1444,3 +1444,7 @@ Section 13: Building our own basecamp - Project management platform
 
 
 164. Section introduction - Introduction to system design
+
+165. Scaling system for one user
+-type command: mkdir system-design
+-in folder system-design add images from lectures
