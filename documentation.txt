@@ -1471,3 +1471,5 @@ Section 14: Mastering system design: Scaling strategies, architecture patterns, 
 
 176. Consistent hashing part 1: Problem statement
 -open link: https://bytebytego.com/courses/system-design-interview/design-consistent-hashing
+
+177. Consistent hashing part 2: Solution
