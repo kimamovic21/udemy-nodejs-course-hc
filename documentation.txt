@@ -1473,3 +1473,6 @@ Section 14: Mastering system design: Scaling strategies, architecture patterns, 
 -open link: https://bytebytego.com/courses/system-design-interview/design-consistent-hashing
 
 177. Consistent hashing part 2: Solution
+
+178. Event driven architecture
+-open link: https://aws.amazon.com/event-driven-architecture
