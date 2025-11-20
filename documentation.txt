@@ -1476,3 +1476,6 @@ Section 14: Mastering system design: Scaling strategies, architecture patterns, 
 
 178. Event driven architecture
 -open link: https://aws.amazon.com/event-driven-architecture
+
+179. Event sourcing
+-open link: https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing
