@@ -1479,3 +1479,17 @@ Section 14: Mastering system design: Scaling strategies, architecture patterns, 
 
 179. Event sourcing
 -open link: https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing
+
+
+
+Section 15: Git - Bonus
+
+
+180. Introduction to GIT series
+-open link: https://git-scm.com
+-open link: https://docs.github.com/en/get-started/git-basics
+-open link: https://www.atlassian.com/git/tutorials/what-is-version-control
+-open link: https://en.wikipedia.org/wiki/Version_control
+-open link: https://www.warp.dev
+-open link: https://code.visualstudio.com
+-open link: https://cursor.com
