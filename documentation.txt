@@ -1460,3 +1460,5 @@ Section 14: Mastering system design: Scaling strategies, architecture patterns, 
 170. Monolith service architecture
 
 171. Microservice architecture
+
+172. HPA microservice and API gateway
