@@ -1468,3 +1468,6 @@ Section 14: Mastering system design: Scaling strategies, architecture patterns, 
 174. Microservice architecture communication (Queue ASYNC)
 
 175. PubNub vs Queue and Fan out architecture
+
+176. Consistent hashing part 1: Problem statement
+-open link: https://bytebytego.com/courses/system-design-interview/design-consistent-hashing
