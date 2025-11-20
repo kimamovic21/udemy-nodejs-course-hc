@@ -1466,3 +1466,5 @@ Section 14: Mastering system design: Scaling strategies, architecture patterns, 
 173. Microservice architecture communication (HTTP SYNC)
 
 174. Microservice architecture communication (Queue ASYNC)
+
+175. PubNub vs Queue and Fan out architecture
