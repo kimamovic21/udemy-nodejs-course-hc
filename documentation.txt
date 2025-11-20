@@ -1462,3 +1462,5 @@ Section 14: Mastering system design: Scaling strategies, architecture patterns, 
 171. Microservice architecture
 
 172. HPA microservice and API gateway
+
+173. Microservice architecture communication (HTTP SYNC)
