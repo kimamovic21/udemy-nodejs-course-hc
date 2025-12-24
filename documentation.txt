@@ -1524,3 +1524,13 @@ Section 15: Git - Bonus
 -type command: cd ..
 -type command: git add documentation.txt
 -type command: git log
+
+183. Git internal working and configs
+-type command: git config --global user.name "Kerim Imamovic"
+-type command: git config --global user.name
+-type command: git config --global core.editor "code --wait"
+-type command: ls
+-create file .gitignore
+-type command: git status
+-type command: git add .
+-type command: git status
