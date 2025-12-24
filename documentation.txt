@@ -1493,3 +1493,14 @@ Section 15: Git - Bonus
 -open link: https://www.warp.dev
 -open link: https://code.visualstudio.com
 -open link: https://cursor.com
+
+181. Git init and hidden folder
+-open link: https://desktop.github.com/download
+-type command: ls
+-type command: mkdir github
+-type command: cd github
+-type command: git status
+-type command: git init
+-type command: ls
+-type command: ls -la
+-type command: cd ..
