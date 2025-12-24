@@ -1504,3 +1504,23 @@ Section 15: Git - Bonus
 -type command: ls
 -type command: ls -la
 -type command: cd ..
+
+182. Git commits and logs
+-open link: https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens
+-install VS Code extensions Git Lens
+-type command: git status
+-type command: cd github
+-in folder github create index.txt file
+-type command: ls
+-type command: git add index.txt
+-type command: git status
+-type command: git commit -m "Git commits and logs"
+-type command: git status
+-type command: git add documentation.txt
+-type command: git status
+-type command: git commit -m "Git commits and logs"
+-type command: cd github git
+-type command: git add index.txt 
+-type command: cd ..
+-type command: git add documentation.txt
+-type command: git log
