@@ -1534,3 +1534,56 @@ Section 15: Git - Bonus
 -type command: git status
 -type command: git add .
 -type command: git status
+
+184. Git merge and git conflicts
+-type command: git status
+-type command: git commit -m 'add index file'
+-type command: git branch
+-type command: git add index.html
+-type command: git commit -m 'update code for index file'
+-type command: git branch
+-type command: git branch nav-bar
+-type command: git checkout nav-bar
+-type command: git touch nav-bar.html
+-in nav-bar.html file create nav HTML element
+-type command: git status
+-type command: git add nav-bar.html
+-type command: git commit -m 'add navbar to code base'
+-type command: git checkout master
+-type command: git touch hero-section.html
+-in hero-section.html create HTML elements
+-type command: git checkout nav-bar
+-type command: git checkout master
+-type command: git branch
+-type command: git checkout nav-bar
+-type command: git branch
+-type command: git checkout master
+-type command: git branch
+-type command: git merge nav-bar
+-type command: git log --oneline
+-type command: git branch -d nav-bar
+-type command: git branch
+-type command: git checkout -b footer
+-type command: git branch
+-type command: git touch footer.html
+-in footer.html file create footer element
+-type command: git branch
+-type command: git add footer.html
+-type command: git commit -m 'add footer section to code base'
+-type command: git checkout master
+-type command: git branch
+-type command: git merge footer
+-type command: git status
+-type command: git add index.html
+-type command: git commit -m 'add footer in index file'
+-type command: git status
+-type command: git checkout footer
+-type command: git add index.html
+-type command: git commit -m 'update index file with footer code'
+-type command: git checkout footer
+-type command: git checkout master
+-type command: git branch
+-type command: git merge footer
+-in VS Code open Merge editor
+-type command: git add .
+-type command: git commit -m 'merged footer branch'
