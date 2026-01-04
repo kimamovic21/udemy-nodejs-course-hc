@@ -1587,3 +1587,40 @@ Section 15: Git - Bonus
 -in VS Code open Merge editor
 -type command: git add .
 -type command: git commit -m 'merged footer branch'
+
+185. Gif diff and stashing
+-type command: git status
+-type command: git add index.html
+-type command: git status
+-type command: git diff
+-type command: git diff --staged
+-type command: git add footer.html
+-type command: git status
+-type command: git diff --staged
+-type command: git commit -m 'change index and footer'
+-type command: git log --oneline
+-type command: git diff abcd100 abcd101 (commit example)
+-type command: git diff abcd100..abcd101 (commit example)
+-type command: git diff branchOne..branchTwo
+-type command: git status
+-type command: git branch
+-type command: git switch -c bugfix
+-type command: git status
+-type command: git switch footer
+-type command: git branch
+-type command: git stash
+-type command: git switch footer
+-type command: git switch bugfix
+-type command: git branch
+-type command: git stash pop
+-type command: git stash
+-type command: git branch
+-type command: git switch master
+-type command: git stash pop
+-type command: git stash list
+-type command: git stash apply stash@{1}
+-type command: git checkout abcd100
+-type command: git log --oneline
+-type command: git checkout HEAD
+-type command: git checkout master
+-type command: git reflog
