@@ -1624,3 +1624,32 @@ Section 15: Git - Bonus
 -type command: git checkout HEAD
 -type command: git checkout master
 -type command: git reflog
+
+186. Git rebase is not that scary
+-type command: git status
+-type command: git commit -am 'updated main website'
+-type command: git checkout bugfix
+-type command: git commit -am 'update navbar'
+-type command: git checkout master
+-type command: git commit -am 'images added'
+-type command: git checkout bugfix
+-type command: git branch
+-type command: git merge master
+-type command: git commit -am 'about us fixed'
+-type command: git checkout master
+-type command: git commit -am 'pricing card added'
+-type command: git log --oneline
+-type command: git checkout bugfix
+-type command: git branch
+-type command: git branch
+-type command: git branch
+-type command: git commit -am 'home tab fixed'
+-type command: git checkout master
+-type command: git commit -am 'why us section added'
+-type command: git branch
+-type command: git checkout bugfix
+-type command: git commit -am 'add card to index file'
+-type command: git branch
+-type command: git rebase master
+-type command: git add index.html
+-type command: git rebase --continue
