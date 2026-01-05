@@ -1690,3 +1690,36 @@ Section 15: Git - Bonus
 -create README.md file
 -type command: git push
 -open link: https://github.com/hiteshchoudhary/open-source-contribution
+
+188. How to make pull requests and open source contribution
+-open link: https://freeapi.app
+-open link: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests
+-talk to people
+-open an issue
+-get the issue assigned
+-work and add value
+-make PR and iterate over it
+-have patience
+-making PR is not a job guarantee
+-open link: https://github.com/testuser/open-source
+-click button Fork
+-create a new fork
+-click button Create fork
+-open link: https://github.com/kimamovic21/open-source
+-type command: ls
+-type command: git clone https://github.com/kimamovic21/open-source
+-type command: cd open-source
+-type command: git status
+-type command: git branch
+-type command: git checkout -b navbar
+-type command: git branch
+-create navbar.html file
+-type command: git add navbar.html
+-type command: git commit -m 'add navbar feature to code'
+-type command: git remove -v
+-type command: git branch
+-type command: git push origin navbar
+-open link: https://github.com/kimamovic21/open-source
+-click button Compare & pull 
+-add a title and add a description
+-click button Create pull request
