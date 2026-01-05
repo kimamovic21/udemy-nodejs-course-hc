@@ -1653,3 +1653,40 @@ Section 15: Git - Bonus
 -type command: git rebase master
 -type command: git add index.html
 -type command: git rebase --continue
+
+187. Insight of pushing code to Github
+-open link: https://github.com/settings/ssh/new
+-open link: https://github.com/settings/gpg/new
+-type command: mkdir gitthree
+-in folder gitthree create index.html file
+-type command: cd gitthree
+-type command: git init
+-type command: git status
+-type command: git add index.html
+-type command: git commit -am 'add index file'
+-open link: https://github.com
+-create new repository learn-git
+-type command: git branch
+-type command: git branch -M main
+-type command: git branch
+-type command: git remove -v
+-type command: git remote add origin https://github.com/kimamovic21/learn-git.git
+-type command: git remove -v
+-type command: git push -u origin main
+-open link: https://github.com/kimamovic21/learn-git
+-type command: git add index.html
+-update index.html file
+-type command: git commit -m 'add paragraph to code'
+-type command: git remove -v
+-type command: git push
+-type command: git push -u origin main
+-update index.html file
+-type command: git add index.html
+-type command: git commit -m 'add a list'
+-type command: git push -u origin main
+-open link: https://github.com/kimamovic21/learn-git/index.html
+-open link: https://www.markdownguide.org/basic-syntax
+-open link: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes
+-create README.md file
+-type command: git push
+-open link: https://github.com/hiteshchoudhary/open-source-contribution
